@@ -1,0 +1,12 @@
+{
+  "FromHoneybeeSimulationParameter": {
+    "simulation_parameter_json": "H:\\gh_shujuku\\LB_tongfeng\\Classroom\\openstudio\\simulation_parameter.json",
+    "applicable": true
+  },
+  "FromHoneybeeModel": {
+    "model_json": "H:\\gh_shujuku\\LB_tongfeng\\Classroom\\openstudio\\Classroom.hbjson",
+    "schedule_csv_dir": "H:\\gh_shujuku\\LB_tongfeng\\Classroom\\openstudio\\schedules",
+    "include_datetimes": false,
+    "applicable": true
+  }
+}

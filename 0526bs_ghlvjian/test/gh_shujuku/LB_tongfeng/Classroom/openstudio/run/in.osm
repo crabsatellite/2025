@@ -1,0 +1,2953 @@
+
+OS:Version,
+  {f017169b-b2a8-4a25-873d-3adbc533fd22}, !- Handle
+  3.5.0;                                  !- Version Identifier
+
+OS:Building,
+  {3c8f1fcb-d04e-4465-93f5-3d7d6e2b56a4}, !- Handle
+  Building 1,                             !- Name
+  ,                                       !- Building Sector Type
+  0,                                      !- North Axis {deg}
+  ,                                       !- Nominal Floor to Floor Height {m}
+  ,                                       !- Space Type Name
+  {6ab5c741-bdcb-497f-bff5-a5215234a643}, !- Default Construction Set Name
+  ,                                       !- Default Schedule Set Name
+  ,                                       !- Standards Number of Stories
+  ,                                       !- Standards Number of Above Ground Stories
+  ,                                       !- Standards Template
+  MediumOffice;                           !- Standards Building Type
+
+OS:Facility,
+  {8f0bf396-dd75-45df-afc1-804126a6b090}; !- Handle
+
+OS:Site,
+  {40788c9d-cb27-47ff-8904-669f94222cf7}, !- Handle
+  Site 1,                                 !- Name
+  ,                                       !- Latitude {deg}
+  ,                                       !- Longitude {deg}
+  ,                                       !- Time Zone {hr}
+  ,                                       !- Elevation {m}
+  City;                                   !- Terrain
+
+OS:SimulationControl,
+  {a1b82e65-31ee-4b88-9f3d-efa300de8557}, !- Handle
+  Yes,                                    !- Do Zone Sizing Calculation
+  Yes,                                    !- Do System Sizing Calculation
+  Yes,                                    !- Do Plant Sizing Calculation
+  No,                                     !- Run Simulation for Sizing Periods
+  Yes,                                    !- Run Simulation for Weather File Run Periods
+  ,                                       !- Loads Convergence Tolerance Value {W}
+  ,                                       !- Temperature Convergence Tolerance Value {deltaC}
+  FullExteriorWithReflections;            !- Solar Distribution
+
+OS:Sizing:Parameters,
+  {3c137dd8-eec2-4b2e-9fae-b427c2932d12}, !- Handle
+  1.25,                                   !- Heating Sizing Factor
+  1.15;                                   !- Cooling Sizing Factor
+
+OS:Timestep,
+  {6fbd91c9-2539-4b53-afca-6b95b98736e4}, !- Handle
+  6;                                      !- Number of Timesteps per Hour
+
+OS:ShadowCalculation,
+  {7d1b09b2-98de-4de7-8030-5175e53c47ca}, !- Handle
+  PolygonClipping,                        !- Shading Calculation Method
+  Periodic,                               !- Shading Calculation Update Frequency Method
+  30,                                     !- Shading Calculation Update Frequency
+  15000,                                  !- Maximum Figures in Shadow Overlap Calculations
+  ,                                       !- Polygon Clipping Algorithm
+  512,                                    !- Pixel Counting Resolution
+  ,                                       !- Sky Diffuse Modeling Algorithm
+  No,                                     !- Output External Shading Calculation Results
+  No,                                     !- Disable Self-Shading Within Shading Zone Groups
+  No;                                     !- Disable Self-Shading From Shading Zone Groups to Other Zones
+
+OS:HeatBalanceAlgorithm,
+  {039d5846-4170-4405-8019-b523a68556e7}, !- Handle
+  ConductionTransferFunction,             !- Algorithm
+  200;                                    !- Surface Temperature Upper Limit {C}
+
+OS:RunPeriod,
+  {c41a2163-b8b6-4f6b-a4ae-3d3081f485ff}, !- Handle
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  12,                                     !- End Month
+  31,                                     !- End Day of Month
+  ,                                       !- Use Weather File Holidays and Special Days
+  ,                                       !- Use Weather File Daylight Saving Period
+  ,                                       !- Apply Weekend Holiday Rule
+  ,                                       !- Use Weather File Rain Indicators
+  ,                                       !- Use Weather File Snow Indicators
+  ;                                       !- Number of Times Runperiod to be Repeated
+
+OS:LifeCycleCost:Parameters,
+  {ca53da41-d7eb-46e8-a4ab-77e7cd08e17f}, !- Handle
+  ,                                       !- Analysis Type
+  ,                                       !- Discounting Convention
+  ,                                       !- Inflation Approach
+  ,                                       !- Real Discount Rate
+  ,                                       !- Nominal Discount Rate
+  ,                                       !- Inflation
+  ,                                       !- Base Date Month
+  ,                                       !- Base Date Year
+  ,                                       !- Service Date Month
+  ,                                       !- Service Date Year
+  ;                                       !- Length of Study Period in Years
+
+OS:WeatherFile,
+  {83daefe0-325e-4250-8b40-bc70db2d2e09}, !- Handle
+  Wuhan,                                  !- City
+  Hubei,                                  !- State Province Region
+  CHN,                                    !- Country
+  CSWD,                                   !- Data Source
+  574940,                                 !- WMO Number
+  30.61667,                               !- Latitude {deg}
+  114.1333,                               !- Longitude {deg}
+  8,                                      !- Time Zone {hr}
+  23.1,                                   !- Elevation {m}
+  H:/gh_shujuku/LB_shujuchucun/CHN_HB_Wuhan.574940_CSWD/CHN_HB_Wuhan.574940_CSWD.epw, !- Url
+  A9DAA593,                               !- Checksum
+  ,                                       !- Start Date Actual Year
+  Sunday;                                 !- Start Day of Week
+
+OS:SizingPeriod:DesignDay,
+  {9412c9d7-04f5-47fb-a523-148259cbad93}, !- Handle
+  Wuhan Ann Htg 99.6% Condns DB,          !- Name
+  -2.5,                                   !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2,                                      !- Wind Speed {m/s}
+  20,                                     !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  1,                                      !- Month
+  WinterDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  -2.5,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:SizingPeriod:DesignDay,
+  {88c6d69c-4134-425c-8cd6-959a9861cacd}, !- Handle
+  Wuhan Ann Hum_n 99.6% Condns DP=>MCDB,  !- Name
+  3.8,                                    !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2,                                      !- Wind Speed {m/s}
+  20,                                     !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  1,                                      !- Month
+  WinterDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Dewpoint,                               !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  -11.9,                                  !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:SizingPeriod:DesignDay,
+  {5818a96f-e47e-4203-bb61-d7419797be29}, !- Handle
+  Wuhan Ann Htg Wind 99.6% Condns WS=>MCDB, !- Name
+  3.7,                                    !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  7,                                      !- Wind Speed {m/s}
+  20,                                     !- Wind Direction {deg}
+  0,                                      !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  1,                                      !- Month
+  WinterDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  3.7,                                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAEClearSky;                         !- Solar Model Indicator
+
+OS:SizingPeriod:DesignDay,
+  {6f200e06-f42f-49d4-ac5d-6dafab549a55}, !- Handle
+  Wuhan Ann Clg .4% Condns DB=>MWB,       !- Name
+  36.2,                                   !- Maximum Dry-Bulb Temperature {C}
+  7,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  3.6,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  27.6,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.664,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.738;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {11c281c1-14d0-4f07-9d45-eb6c0c820a21}, !- Handle
+  Wuhan Ann Clg .4% Condns WB=>MDB,       !- Name
+  33.7,                                   !- Maximum Dry-Bulb Temperature {C}
+  7,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  3.6,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  29.3,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.664,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.738;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {1c2c267c-8b19-4899-95f9-d45851647c28}, !- Handle
+  Wuhan Ann Clg .4% Condns DP=>MDB,       !- Name
+  31.9,                                   !- Maximum Dry-Bulb Temperature {C}
+  7,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  3.6,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Dewpoint,                               !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  28.2,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.664,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.738;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {f8ec1d89-cab9-4ff5-8c75-80f85694027a}, !- Handle
+  Wuhan Ann Clg .4% Condns Enth=>MDB,     !- Name
+  33.5,                                   !- Maximum Dry-Bulb Temperature {C}
+  7,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  3.6,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Enthalpy,                               !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  23,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  97200,                                  !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.664,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.738;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {21ae7cb4-2553-4506-acc5-d7ba0e0db854}, !- Handle
+  Wuhan January .4% Condns DB=>MCWB,      !- Name
+  16,                                     !- Maximum Dry-Bulb Temperature {C}
+  6.9,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.1,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  1,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  9.7,                                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.666,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.531;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {9368fa19-5a19-4f52-8d1c-d76d9764303d}, !- Handle
+  Wuhan February .4% Condns DB=>MCWB,     !- Name
+  21,                                     !- Maximum Dry-Bulb Temperature {C}
+  7.2,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  2,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  15.4,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.72,                                   !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.469;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {f2853f58-0728-4189-9f1c-ab37bd7068a2}, !- Handle
+  Wuhan March .4% Condns DB=>MCWB,        !- Name
+  26.7,                                   !- Maximum Dry-Bulb Temperature {C}
+  8,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.5,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  3,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  19.6,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.745,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.452;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {95e18e5f-5902-4130-b59f-36a7bf655fb8}, !- Handle
+  Wuhan April .4% Condns DB=>MCWB,        !- Name
+  31.1,                                   !- Maximum Dry-Bulb Temperature {C}
+  8.4,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.5,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  4,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  22,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.741,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.5;                                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {d48a43f3-99aa-4cfc-93ac-b7a53b552284}, !- Handle
+  Wuhan May .4% Condns DB=>MCWB,          !- Name
+  33.8,                                   !- Maximum Dry-Bulb Temperature {C}
+  8.2,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  5,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  22.7,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.719,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.578;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {0b7b0c45-87fa-4dc5-aecc-ad24c8845384}, !- Handle
+  Wuhan June .4% Condns DB=>MCWB,         !- Name
+  35.8,                                   !- Maximum Dry-Bulb Temperature {C}
+  7.2,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  6,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  26.7,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.728,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.587;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {e16bfbbc-b5d4-4b25-91c1-00d4549a0cd6}, !- Handle
+  Wuhan July .4% Condns DB=>MCWB,         !- Name
+  37.9,                                   !- Maximum Dry-Bulb Temperature {C}
+  7,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.6,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  28.1,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.664,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.738;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {85ed0837-9b81-48ef-9947-5ed4f49503ce}, !- Handle
+  Wuhan August .4% Condns DB=>MCWB,       !- Name
+  38,                                     !- Maximum Dry-Bulb Temperature {C}
+  7.3,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.5,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  8,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  27.2,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.702,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.64;                                   !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {68117cb8-3dbc-4857-ad5f-41076a50e96e}, !- Handle
+  Wuhan September .4% Condns DB=>MCWB,    !- Name
+  35.2,                                   !- Maximum Dry-Bulb Temperature {C}
+  7.9,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  9,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  26.3,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.726,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.57;                                   !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {5b4a6337-17a5-4710-a22b-bb3e526701e3}, !- Handle
+  Wuhan October .4% Condns DB=>MCWB,      !- Name
+  31.1,                                   !- Maximum Dry-Bulb Temperature {C}
+  8.1,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2,                                      !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  10,                                     !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  22.2,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.722,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.525;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {8da358e3-d553-4167-aba9-894d7bca5ca3}, !- Handle
+  Wuhan November .4% Condns DB=>MCWB,     !- Name
+  25.2,                                   !- Maximum Dry-Bulb Temperature {C}
+  8,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2,                                      !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  11,                                     !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  17,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.686,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.554;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {b618f808-c450-44d9-9c95-86a90110bd48}, !- Handle
+  Wuhan December .4% Condns DB=>MCWB,     !- Name
+  18,                                     !- Maximum Dry-Bulb Temperature {C}
+  7.6,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.1,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  12,                                     !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  11.1,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.653,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.572;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {69d9dcf8-c01a-404f-b8c3-16c20eef4d69}, !- Handle
+  Wuhan January .4% Condns WB=>MCDB,      !- Name
+  13.9,                                   !- Maximum Dry-Bulb Temperature {C}
+  6.9,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.1,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  1,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  11.7,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.666,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.531;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {4aeb9511-9411-48be-aa73-b1c2f6296823}, !- Handle
+  Wuhan February .4% Condns WB=>MCDB,     !- Name
+  20,                                     !- Maximum Dry-Bulb Temperature {C}
+  7.2,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  2,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  16.3,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.72,                                   !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.469;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {6b08c36e-1727-467e-a23c-775766abc9f9}, !- Handle
+  Wuhan March .4% Condns WB=>MCDB,        !- Name
+  24.9,                                   !- Maximum Dry-Bulb Temperature {C}
+  8,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.5,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  3,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  20.8,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.745,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.452;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {8bd040bd-1e4d-4a89-92e7-d4ee36b5cbee}, !- Handle
+  Wuhan April .4% Condns WB=>MCDB,        !- Name
+  28.7,                                   !- Maximum Dry-Bulb Temperature {C}
+  8.4,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.5,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  4,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  24,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.741,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.5;                                    !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {0ae17bab-07c6-4405-8295-f97d8c871ce9}, !- Handle
+  Wuhan May .4% Condns WB=>MCDB,          !- Name
+  30.5,                                   !- Maximum Dry-Bulb Temperature {C}
+  8.2,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  5,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  26.2,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.719,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.578;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {c35d89de-882d-466d-b0a2-9355a3be5f19}, !- Handle
+  Wuhan June .4% Condns WB=>MCDB,         !- Name
+  33.2,                                   !- Maximum Dry-Bulb Temperature {C}
+  7.2,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  6,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  29,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.728,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.587;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {dab191a4-2478-415f-a3b8-eac7ea679be2}, !- Handle
+  Wuhan July .4% Condns WB=>MCDB,         !- Name
+  34.6,                                   !- Maximum Dry-Bulb Temperature {C}
+  7,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.6,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  7,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  30.3,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.664,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.738;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {8973d8aa-9705-4a67-a338-bb7b9f77cbf6}, !- Handle
+  Wuhan August .4% Condns WB=>MCDB,       !- Name
+  35,                                     !- Maximum Dry-Bulb Temperature {C}
+  7.3,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.5,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  8,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  30.3,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.702,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.64;                                   !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {b983d5eb-d2e9-4bf2-b6aa-ceab5007e90b}, !- Handle
+  Wuhan September .4% Condns WB=>MCDB,    !- Name
+  32.5,                                   !- Maximum Dry-Bulb Temperature {C}
+  7.9,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  9,                                      !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  28.5,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.726,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.57;                                   !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {0b2bdcb4-e5ff-42d8-bd65-b48791e72d4b}, !- Handle
+  Wuhan October .4% Condns WB=>MCDB,      !- Name
+  27.5,                                   !- Maximum Dry-Bulb Temperature {C}
+  8.1,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2,                                      !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  10,                                     !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  24,                                     !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.722,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.525;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {b0f350b9-4cfa-42da-9a0d-7e133a773f7b}, !- Handle
+  Wuhan November .4% Condns WB=>MCDB,     !- Name
+  22.2,                                   !- Maximum Dry-Bulb Temperature {C}
+  8,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2,                                      !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  11,                                     !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  19.2,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.686,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.554;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:SizingPeriod:DesignDay,
+  {e937253c-efa4-4191-9724-3f887c628d18}, !- Handle
+  Wuhan December .4% Condns WB=>MCDB,     !- Name
+  15.8,                                   !- Maximum Dry-Bulb Temperature {C}
+  7.6,                                    !- Daily Dry-Bulb Temperature Range {deltaC}
+  101048,                                 !- Barometric Pressure {Pa}
+  2.1,                                    !- Wind Speed {m/s}
+  220,                                    !- Wind Direction {deg}
+  ,                                       !- Sky Clearness
+  ,                                       !- Rain Indicator
+  ,                                       !- Snow Indicator
+  21,                                     !- Day of Month
+  12,                                     !- Month
+  SummerDesignDay,                        !- Day Type
+  ,                                       !- Daylight Saving Time Indicator
+  Wetbulb,                                !- Humidity Condition Type
+  ,                                       !- Humidity Condition Day Schedule Name
+  12.8,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  ASHRAETau,                              !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  0.653,                                  !- ASHRAE Clear Sky Optical Depth for Beam Irradiance {dimensionless}
+  1.572;                                  !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance {dimensionless}
+
+OS:Site:WaterMainsTemperature,
+  {98365279-cf62-4a8a-a543-01ec8b0e55a4}, !- Handle
+  CorrelationFromWeatherFile;             !- Calculation Method
+
+OS:ClimateZones,
+  {c7dde97e-7a41-4005-a164-395ad7297a23}, !- Handle
+  ASHRAE,                                 !- Climate Zone Institution Name 1
+  ANSI/ASHRAE Standard 169,               !- Climate Zone Document Name 1
+  2006,                                   !- Climate Zone Document Year 1
+  3A;                                     !- Climate Zone Value 1
+
+OS:Output:Variable,
+  {61491cfa-0214-4764-951e-37c20e5a8e8b}, !- Handle
+  Output Variable 1,                      !- Name
+  ,                                       !- Key Value
+  AFN Zone Ventilation Air Change Rate,   !- Variable Name
+  Hourly;                                 !- Reporting Frequency
+
+OS:Output:Variable,
+  {a4e6259b-d870-4efe-a894-6e6a43fa2ebb}, !- Handle
+  Output Variable 2,                      !- Name
+  ,                                       !- Key Value
+  Surface Inside Face Temperature,        !- Variable Name
+  Hourly;                                 !- Reporting Frequency
+
+OS:Output:Variable,
+  {44bbb91b-5e17-4308-84b6-a309b18cd6be}, !- Handle
+  Output Variable 3,                      !- Name
+  ,                                       !- Key Value
+  Surface Outside Face Temperature,       !- Variable Name
+  Hourly;                                 !- Reporting Frequency
+
+OS:Output:Variable,
+  {f29aff5c-9367-4ddb-a06a-fed0baa02a7e}, !- Handle
+  Output Variable 4,                      !- Name
+  ,                                       !- Key Value
+  Zone Air Relative Humidity,             !- Variable Name
+  Hourly;                                 !- Reporting Frequency
+
+OS:Output:Variable,
+  {90bacc14-440d-4e47-a9b3-94f9fa7b54aa}, !- Handle
+  Output Variable 5,                      !- Name
+  ,                                       !- Key Value
+  Zone Mean Air Temperature,              !- Variable Name
+  Hourly;                                 !- Reporting Frequency
+
+OS:Output:Variable,
+  {37f28780-8440-4c56-82fe-6f6bea1dacc8}, !- Handle
+  Output Variable 6,                      !- Name
+  ,                                       !- Key Value
+  Zone Mean Radiant Temperature,          !- Variable Name
+  Hourly;                                 !- Reporting Frequency
+
+OS:Output:Variable,
+  {c714da06-8695-41c9-9931-35a91a33794e}, !- Handle
+  Output Variable 7,                      !- Name
+  ,                                       !- Key Value
+  Zone Operative Temperature,             !- Variable Name
+  Hourly;                                 !- Reporting Frequency
+
+OS:Output:Table:SummaryReports,
+  {5fb1dd07-1b60-4147-9263-9d00a3608d3d}, !- Handle
+  AllSummary;                             !- Report Name 1
+
+OS:YearDescription,
+  {ea573499-e338-4411-8de5-01fde5528c34}, !- Handle
+  ,                                       !- Calendar Year
+  Sunday,                                 !- Day of Week for Start Day
+  No;                                     !- Is Leap Year
+
+OS:AirflowNetworkSimulationControl,
+  {7fae2c18-379b-4c43-8a7d-c2a18e6d4cb0}, !- Handle
+  Window Based Ventilative Cooling,       !- Name
+  MultiZoneWithoutDistribution,           !- AirflowNetwork Control
+  ,                                       !- Wind Pressure Coefficient Type
+  ,                                       !- Height Selection for Local Wind Pressure Calculation
+  LowRise,                                !- Building Type
+  ,                                       !- Maximum Number of Iterations {dimensionless}
+  ,                                       !- Initialization Type
+  ,                                       !- Relative Airflow Convergence Tolerance {dimensionless}
+  ,                                       !- Absolute Airflow Convergence Tolerance {kg/s}
+  ,                                       !- Convergence Acceleration Limit {dimensionless}
+  90,                                     !- Azimuth Angle of Long Axis of Building {deg}
+  0.888888888888889;                      !- Ratio of Building Width Along Short Axis to Width Along Long Axis
+
+OS:AirflowNetworkReferenceCrackConditions,
+  {3136035b-d37b-4ea9-af6b-f32072585e73}, !- Handle
+  Reference Crack Conditions,             !- Name
+  20,                                     !- Reference Temperature {C}
+  101325,                                 !- Reference Barometric Pressure {Pa}
+  0;                                      !- Reference Humidity Ratio {kgWater/kgDryAir}
+
+OS:ScheduleTypeLimits,
+  {b5d9f929-c409-47b8-aef6-da42e0681f3c}, !- Handle
+  Activity Level,                         !- Name
+  0,                                      !- Lower Limit Value
+  ,                                       !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  ActivityLevel;                          !- Unit Type
+
+OS:ScheduleTypeLimits,
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Handle
+  Fractional,                             !- Name
+  0,                                      !- Lower Limit Value
+  1,                                      !- Upper Limit Value
+  Continuous,                             !- Numeric Type
+  Dimensionless;                          !- Unit Type
+
+OS:Schedule:Ruleset,
+  {63095ed3-12f5-40a4-817a-952b63e14991}, !- Handle
+  WeeklySchedule_7b9ee703,                !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  {64ff9ade-700a-44f0-8859-be69e204ab39}, !- Default Day Schedule Name
+  {edfef261-7a01-4de5-b0aa-1ea099f6a7b5}, !- Summer Design Day Schedule Name
+  {8f459080-2b6a-4228-8ba7-21f881615598}, !- Winter Design Day Schedule Name
+  {842d55f0-906a-4b97-8c28-47e83a9612e7}; !- Holiday Schedule Name
+
+OS:Schedule:Day,
+  {64ff9ade-700a-44f0-8859-be69e204ab39}, !- Handle
+  WeeklySchedule_7b9ee703_Sunday,         !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {f3ac5d16-2f11-44e6-b8f2-ce7e73402824}, !- Handle
+  WeeklySchedule_7b9ee703_Monday_SmrDsn,  !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  7,                                      !- Hour 1
+  0,                                      !- Minute 1
+  0,                                      !- Value Until Time 1
+  8,                                      !- Hour 2
+  0,                                      !- Minute 2
+  0.1,                                    !- Value Until Time 2
+  9,                                      !- Hour 3
+  0,                                      !- Minute 3
+  0.5,                                    !- Value Until Time 3
+  12,                                     !- Hour 4
+  0,                                      !- Minute 4
+  0.95,                                   !- Value Until Time 4
+  14,                                     !- Hour 5
+  0,                                      !- Minute 5
+  0.8,                                    !- Value Until Time 5
+  18,                                     !- Hour 6
+  0,                                      !- Minute 6
+  0.95,                                   !- Value Until Time 6
+  20,                                     !- Hour 7
+  0,                                      !- Minute 7
+  0.3,                                    !- Value Until Time 7
+  24,                                     !- Hour 8
+  0,                                      !- Minute 8
+  0;                                      !- Value Until Time 8
+
+OS:Schedule:Day,
+  {aca52057-6d1f-47a7-8073-3cc7980b782e}, !- Handle
+  WeeklySchedule_7b9ee703_Monday_SmrDsn_WntrDsn, !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {699c8b78-c8d4-49b9-8619-620fc84e4454}, !- Handle
+  WeeklySchedule_7b9ee703_Hol,            !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {6dc08c34-cb12-485b-a2a2-b8f712e5f280}, !- Handle
+  WeeklySchedule_7b9ee703_Monday,         !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  7,                                      !- Hour 1
+  0,                                      !- Minute 1
+  0,                                      !- Value Until Time 1
+  8,                                      !- Hour 2
+  0,                                      !- Minute 2
+  0.1,                                    !- Value Until Time 2
+  9,                                      !- Hour 3
+  0,                                      !- Minute 3
+  0.5,                                    !- Value Until Time 3
+  12,                                     !- Hour 4
+  0,                                      !- Minute 4
+  0.95,                                   !- Value Until Time 4
+  14,                                     !- Hour 5
+  0,                                      !- Minute 5
+  0.8,                                    !- Value Until Time 5
+  18,                                     !- Hour 6
+  0,                                      !- Minute 6
+  0.95,                                   !- Value Until Time 6
+  20,                                     !- Hour 7
+  0,                                      !- Minute 7
+  0.3,                                    !- Value Until Time 7
+  24,                                     !- Hour 8
+  0,                                      !- Minute 8
+  0;                                      !- Value Until Time 8
+
+OS:Schedule:Day,
+  {842d55f0-906a-4b97-8c28-47e83a9612e7}, !- Handle
+  WeeklySchedule_7b9ee703_Hol 1,          !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Day,
+  {edfef261-7a01-4de5-b0aa-1ea099f6a7b5}, !- Handle
+  WeeklySchedule_7b9ee703_Monday_SmrDsn 1, !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  7,                                      !- Hour 1
+  0,                                      !- Minute 1
+  0,                                      !- Value Until Time 1
+  8,                                      !- Hour 2
+  0,                                      !- Minute 2
+  0.1,                                    !- Value Until Time 2
+  9,                                      !- Hour 3
+  0,                                      !- Minute 3
+  0.5,                                    !- Value Until Time 3
+  12,                                     !- Hour 4
+  0,                                      !- Minute 4
+  0.95,                                   !- Value Until Time 4
+  14,                                     !- Hour 5
+  0,                                      !- Minute 5
+  0.8,                                    !- Value Until Time 5
+  18,                                     !- Hour 6
+  0,                                      !- Minute 6
+  0.95,                                   !- Value Until Time 6
+  20,                                     !- Hour 7
+  0,                                      !- Minute 7
+  0.3,                                    !- Value Until Time 7
+  24,                                     !- Hour 8
+  0,                                      !- Minute 8
+  0;                                      !- Value Until Time 8
+
+OS:Schedule:Day,
+  {8f459080-2b6a-4228-8ba7-21f881615598}, !- Handle
+  WeeklySchedule_7b9ee703_Monday_SmrDsn_WntrDsn 1, !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  0;                                      !- Value Until Time 1
+
+OS:Schedule:Rule,
+  {2ffbd03a-cee0-49db-a4e3-a35770a570ea}, !- Handle
+  Schedule Rule 1,                        !- Name
+  {63095ed3-12f5-40a4-817a-952b63e14991}, !- Schedule Ruleset Name
+  0,                                      !- Rule Order
+  {fed19c78-b0ae-4e1a-9569-203c7a6706e4}, !- Day Schedule Name
+  No,                                     !- Apply Sunday
+  Yes,                                    !- Apply Monday
+  Yes,                                    !- Apply Tuesday
+  Yes,                                    !- Apply Wednesday
+  Yes,                                    !- Apply Thursday
+  Yes,                                    !- Apply Friday
+  No,                                     !- Apply Saturday
+  DateRange,                              !- Date Specification Type
+  1,                                      !- Start Month
+  1,                                      !- Start Day
+  12,                                     !- End Month
+  31;                                     !- End Day
+
+OS:Schedule:Day,
+  {fed19c78-b0ae-4e1a-9569-203c7a6706e4}, !- Handle
+  Schedule Day 1,                         !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  7,                                      !- Hour 1
+  0,                                      !- Minute 1
+  0,                                      !- Value Until Time 1
+  8,                                      !- Hour 2
+  0,                                      !- Minute 2
+  0.1,                                    !- Value Until Time 2
+  9,                                      !- Hour 3
+  0,                                      !- Minute 3
+  0.5,                                    !- Value Until Time 3
+  12,                                     !- Hour 4
+  0,                                      !- Minute 4
+  0.95,                                   !- Value Until Time 4
+  14,                                     !- Hour 5
+  0,                                      !- Minute 5
+  0.8,                                    !- Value Until Time 5
+  18,                                     !- Hour 6
+  0,                                      !- Minute 6
+  0.95,                                   !- Value Until Time 6
+  20,                                     !- Hour 7
+  0,                                      !- Minute 7
+  0.3,                                    !- Value Until Time 7
+  24,                                     !- Hour 8
+  0,                                      !- Minute 8
+  0;                                      !- Value Until Time 8
+
+OS:Schedule:Ruleset,
+  {5b66a570-8112-4256-9e01-83d3589a75a3}, !- Handle
+  Seated Adult Activity,                  !- Name
+  {b5d9f929-c409-47b8-aef6-da42e0681f3c}, !- Schedule Type Limits Name
+  {42006c95-0fa3-4550-90f9-9b13f09e2c11}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {42006c95-0fa3-4550-90f9-9b13f09e2c11}, !- Handle
+  Seated Adult Activity_Day Schedule,     !- Name
+  {b5d9f929-c409-47b8-aef6-da42e0681f3c}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  120;                                    !- Value Until Time 1
+
+OS:Schedule:Ruleset,
+  {f60511c6-3461-40a2-a684-ebb88b1c56be}, !- Handle
+  Always On,                              !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  {c79efa1e-d281-41b3-89c1-ab1d74e9ced3}; !- Default Day Schedule Name
+
+OS:Schedule:Day,
+  {c79efa1e-d281-41b3-89c1-ab1d74e9ced3}, !- Handle
+  Always On_Day Schedule,                 !- Name
+  {bf6cd144-a4bd-4d67-9f29-d08c721c432a}, !- Schedule Type Limits Name
+  ,                                       !- Interpolate to Timestep
+  24,                                     !- Hour 1
+  0,                                      !- Minute 1
+  1;                                      !- Value Until Time 1
+
+OS:Material:NoMass,
+  {06913d70-d6dc-4fee-bf11-519134ad8195}, !- Handle
+  Typical Insulation-R4,                  !- Name
+  MediumSmooth,                           !- Roughness
+  0.704440735239539,                      !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {76f04575-bbcb-465b-92ce-323e33392653}, !- Handle
+  1IN Stucco,                             !- Name
+  Smooth,                                 !- Roughness
+  0.0253,                                 !- Thickness {m}
+  0.691337354832922,                      !- Conductivity {W/m-K}
+  1858.00424829652,                       !- Density {kg/m3}
+  836.460315804243,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.92;                                   !- Visible Absorptance
+
+OS:Material,
+  {f8e7d15f-1f48-4360-a9c7-6aa2bc675ad6}, !- Handle
+  8IN CONCRETE HW RefBldg,                !- Name
+  Rough,                                  !- Roughness
+  0.2032,                                 !- Thickness {m}
+  1.31012326132692,                       !- Conductivity {W/m-K}
+  2240.0051217353,                        !- Density {kg/m3}
+  836.260444761042,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material:NoMass,
+  {61959ab4-0841-4e6e-83c5-8e537972d359}, !- Handle
+  Typical Insulation-R7,                  !- Name
+  MediumSmooth,                           !- Roughness
+  1.23277128666919,                       !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {b2f14d95-1250-41e4-8427-6a558858f671}, !- Handle
+  Metal Roof Surface,                     !- Name
+  Smooth,                                 !- Roughness
+  0.000799999999999998,                   !- Thickness {m}
+  45.2497187436177,                       !- Conductivity {W/m-K}
+  7824.01788948971,                       !- Density {kg/m3}
+  499.67760800731,                        !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {3895a838-f5d5-4038-bca3-c90174320dc2}, !- Handle
+  F08 Metal surface,                      !- Name
+  Smooth,                                 !- Roughness
+  0.0008,                                 !- Thickness {m}
+  45.2497187436178,                       !- Conductivity {W/m-K}
+  7824.01788948971,                       !- Density {kg/m3}
+  499.677608007314,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material:NoMass,
+  {9c6fc2de-2486-4feb-8a66-7e4871a22e7f}, !- Handle
+  Typical Insulation-R12,                 !- Name
+  MediumSmooth,                           !- Roughness
+  2.11332220571862,                       !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material:NoMass,
+  {25251400-6596-4603-88bf-bbdf7f3cd78b}, !- Handle
+  Typical Insulation,                     !- Name
+  MediumSmooth,                           !- Roughness
+  0.028222222242667,                      !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {46e085c4-a7c3-4370-9d41-5eb97b999486}, !- Handle
+  4 in. Normalweight Concrete Floor,      !- Name
+  MediumRough,                            !- Roughness
+  0.1016,                                 !- Thickness {m}
+  2.30845517442043,                       !- Conductivity {W/m-K}
+  2322.00530922738,                       !- Density {kg/m3}
+  831.463539724167,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {4b022890-15f5-4ef9-9df7-dfacc06e50ac}, !- Handle
+  Roof Membrane - Highly Reflective,      !- Name
+  VeryRough,                              !- Roughness
+  0.0095,                                 !- Thickness {m}
+  0.159892999094056,                      !- Conductivity {W/m-K}
+  1121.29256381722,                       !- Density {kg/m3}
+  1459.05861538136,                       !- Specific Heat {J/kg-K}
+  0.75,                                   !- Thermal Absorptance
+  0.45,                                   !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:WindowMaterial:Gas,
+  {470b9b2a-3519-4375-b602-8f873da4f2c0}, !- Handle
+  Gap_1_W_0_0025,                         !- Name
+  Air,                                    !- Gas Type
+  0.0025;                                 !- Thickness {m}
+
+OS:Material,
+  {0cd61bac-a661-4359-b31f-2fb14c4de415}, !- Handle
+  8 in. Concrete Block Basement Wall,     !- Name
+  MediumRough,                            !- Roughness
+  0.2032,                                 !- Thickness {m}
+  1.32511322999199,                       !- Conductivity {W/m-K}
+  1842.00421171268,                       !- Density {kg/m3}
+  911.411957005339,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {fa671c01-c44c-4a2b-ade5-d8536172cc7f}, !- Handle
+  U 0.42 SHGC 0.25 Simple Glazing,        !- Name
+  2.38476,                                !- U-Factor {W/m2-K}
+  0.25,                                   !- Solar Heat Gain Coefficient
+  0.6;                                    !- Visible Transmittance
+
+OS:Material:NoMass,
+  {4f613b09-617f-4ab0-bd99-9200bda5a7b9}, !- Handle
+  Typical Insulation-R26,                 !- Name
+  MediumSmooth,                           !- Roughness
+  4.57886477905701,                       !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:WindowMaterial:SimpleGlazingSystem,
+  {cfcf5f98-84cc-4df2-bf51-eb75cf6a9a02}, !- Handle
+  U 0.55 SHGC 0.3 Simple Glazing,         !- Name
+  3.1229,                                 !- U-Factor {W/m2-K}
+  0.3,                                    !- Solar Heat Gain Coefficient
+  0.6;                                    !- Visible Transmittance
+
+OS:Material,
+  {0d237861-d504-4a31-ac0b-84b675018098}, !- Handle
+  8 in. Normalweight Concrete Floor,      !- Name
+  MediumRough,                            !- Roughness
+  0.2032,                                 !- Thickness {m}
+  2.30845517442043,                       !- Conductivity {W/m-K}
+  2322.00530922738,                       !- Density {kg/m3}
+  831.463539724167,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {b92b958e-1940-43c3-8418-c41564177a2e}, !- Handle
+  1/2IN Gypsum,                           !- Name
+  Smooth,                                 !- Roughness
+  0.0127,                                 !- Thickness {m}
+  0.159892999094056,                      !- Conductivity {W/m-K}
+  784.901794665194,                       !- Density {kg/m3}
+  829.464829292142,                       !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.4,                                    !- Solar Absorptance
+  0.4;                                    !- Visible Absorptance
+
+OS:Material:NoMass,
+  {214db8d4-33c4-4865-8c22-9aa4324ff4b4}, !- Handle
+  Typical Insulation-R3,                  !- Name
+  MediumSmooth,                           !- Roughness
+  0.528330551429654,                      !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:WindowMaterial:Glazing,
+  {2ed247cd-fad7-4333-8489-a70a33284567}, !- Handle
+  Glass_2175_LayerAvg,                    !- Name
+  SpectralAverage,                        !- Optical Data Type
+  ,                                       !- Window Glass Spectral Data Set Name
+  0.00859999999999999,                    !- Thickness {m}
+  0.167758,                               !- Solar Transmittance at Normal Incidence
+  0.2176064,                              !- Front Side Solar Reflectance at Normal Incidence
+  0.4379779,                              !- Back Side Solar Reflectance at Normal Incidence
+  0.416044,                               !- Visible Transmittance at Normal Incidence
+  0.078729,                               !- Front Side Visible Reflectance at Normal Incidence
+  0.10654,                                !- Back Side Visible Reflectance at Normal Incidence
+  0,                                      !- Infrared Transmittance at Normal Incidence
+  0.84,                                   !- Front Side Infrared Hemispherical Emissivity
+  0.84,                                   !- Back Side Infrared Hemispherical Emissivity
+  0.999331244337846,                      !- Conductivity {W/m-K}
+  1,                                      !- Dirt Correction Factor for Solar and Visible Transmittance
+  No;                                     !- Solar Diffusing
+
+OS:Material:NoMass,
+  {a3d7e98e-1956-46f9-b4cd-2dd9f829b3d1}, !- Handle
+  Typical Carpet Pad,                     !- Name
+  VeryRough,                              !- Roughness
+  0.2164799871521,                        !- Thermal Resistance {m2-K/W}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.8;                                    !- Visible Absorptance
+
+OS:WindowMaterial:Glazing,
+  {83a0ff2a-08da-4a72-bac1-4034da71848b}, !- Handle
+  Glass_2022F_LayerAvg,                   !- Name
+  SpectralAverage,                        !- Optical Data Type
+  ,                                       !- Window Glass Spectral Data Set Name
+  0.0039,                                 !- Thickness {m}
+  0.355897,                               !- Solar Transmittance at Normal Incidence
+  0.3940945,                              !- Front Side Solar Reflectance at Normal Incidence
+  0.2656452,                              !- Back Side Solar Reflectance at Normal Incidence
+  0.677694,                               !- Visible Transmittance at Normal Incidence
+  0.042734,                               !- Front Side Visible Reflectance at Normal Incidence
+  0.05547,                                !- Back Side Visible Reflectance at Normal Incidence
+  0,                                      !- Infrared Transmittance at Normal Incidence
+  0.046,                                  !- Front Side Infrared Hemispherical Emissivity
+  0.84,                                   !- Back Side Infrared Hemispherical Emissivity
+  0.999331244337846,                      !- Conductivity {W/m-K}
+  1,                                      !- Dirt Correction Factor for Solar and Visible Transmittance
+  No;                                     !- Solar Diffusing
+
+OS:Construction,
+  {46876748-0be0-410e-8809-686003182872}, !- Handle
+  Typical Insulated Exterior Mass Wall-R9, !- Name
+  ,                                       !- Surface Rendering Name
+  {76f04575-bbcb-465b-92ce-323e33392653}, !- Layer 1
+  {f8e7d15f-1f48-4360-a9c7-6aa2bc675ad6}, !- Layer 2
+  {61959ab4-0841-4e6e-83c5-8e537972d359}, !- Layer 3
+  {b92b958e-1940-43c3-8418-c41564177a2e}; !- Layer 4
+
+OS:Construction,
+  {0b3191dc-c04b-4958-9632-b90dd77a96e8}, !- Handle
+  Typical Insulated Metal Door-R3,        !- Name
+  ,                                       !- Surface Rendering Name
+  {3895a838-f5d5-4038-bca3-c90174320dc2}, !- Layer 1
+  {214db8d4-33c4-4865-8c22-9aa4324ff4b4}; !- Layer 2
+
+OS:Construction,
+  {e513fb0a-703c-4277-b58b-17d7606b7239}, !- Handle
+  Typical Insulated Exterior Mass Floor-R14, !- Name
+  ,                                       !- Surface Rendering Name
+  {9c6fc2de-2486-4feb-8a66-7e4871a22e7f}, !- Layer 1
+  {46e085c4-a7c3-4370-9d41-5eb97b999486}, !- Layer 2
+  {a3d7e98e-1956-46f9-b4cd-2dd9f829b3d1}; !- Layer 3
+
+OS:Construction,
+  {37cb7c9c-5bed-4381-bb35-916c367a08d3}, !- Handle
+  Typical Insulated Carpeted 8in Slab Floor, !- Name
+  ,                                       !- Surface Rendering Name
+  {25251400-6596-4603-88bf-bbdf7f3cd78b}, !- Layer 1
+  {0d237861-d504-4a31-ac0b-84b675018098}, !- Layer 2
+  {a3d7e98e-1956-46f9-b4cd-2dd9f829b3d1}; !- Layer 3
+
+OS:Construction,
+  {f737038c-443e-4fc5-933f-cda761c755e1}, !- Handle
+  Typical IEAD Roof - Highly Reflective-R26, !- Name
+  ,                                       !- Surface Rendering Name
+  {4b022890-15f5-4ef9-9df7-dfacc06e50ac}, !- Layer 1
+  {4f613b09-617f-4ab0-bd99-9200bda5a7b9}, !- Layer 2
+  {b2f14d95-1250-41e4-8427-6a558858f671}; !- Layer 3
+
+OS:Construction,
+  {a535986b-5496-4847-a50f-467e1d572cb9}, !- Handle
+  U 0.60 SHGC 0.25 Dbl 2.5mm air,         !- Name
+  ,                                       !- Surface Rendering Name
+  {2ed247cd-fad7-4333-8489-a70a33284567}, !- Layer 1
+  {470b9b2a-3519-4375-b602-8f873da4f2c0}, !- Layer 2
+  {83a0ff2a-08da-4a72-bac1-4034da71848b}; !- Layer 3
+
+OS:Construction,
+  {07347d7e-ce77-4cc3-9f17-4a3bad359971}, !- Handle
+  Typical Insulated Basement Mass Wall,   !- Name
+  ,                                       !- Surface Rendering Name
+  {25251400-6596-4603-88bf-bbdf7f3cd78b}, !- Layer 1
+  {0cd61bac-a661-4359-b31f-2fb14c4de415}; !- Layer 2
+
+OS:Construction,
+  {6c011959-95d0-4ac1-9efa-b21cea036eec}, !- Handle
+  U 0.42 SHGC 0.25 Simple Glazing Window, !- Name
+  ,                                       !- Surface Rendering Name
+  {fa671c01-c44c-4a2b-ade5-d8536172cc7f}; !- Layer 1
+
+OS:Construction,
+  {a629b0ea-0c31-482e-95b8-378c274a4ca9}, !- Handle
+  Typical Overhead Door-R4,               !- Name
+  ,                                       !- Surface Rendering Name
+  {06913d70-d6dc-4fee-bf11-519134ad8195}; !- Layer 1
+
+OS:Construction,
+  {ab140bff-d252-4cf1-9962-d6e383924f05}, !- Handle
+  U 0.55 SHGC 0.3 Simple Glazing Skylight, !- Name
+  ,                                       !- Surface Rendering Name
+  {cfcf5f98-84cc-4df2-bf51-eb75cf6a9a02}; !- Layer 1
+
+OS:DefaultConstructionSet,
+  {53b66cdf-ab5f-47d3-86de-9af28f56a5ac}, !- Handle
+  2019::ClimateZone3::Mass,               !- Name
+  {09083690-83eb-4813-97ca-59372224885e}, !- Default Exterior Surface Constructions Name
+  {a80481bf-09fb-49cd-9ef1-b7ce05a38ea5}, !- Default Interior Surface Constructions Name
+  {075f809f-09cc-4e02-9964-d5402edecadc}, !- Default Ground Contact Surface Constructions Name
+  {0ec31d21-409c-401e-8225-e2a06a68ed4f}, !- Default Exterior SubSurface Constructions Name
+  {f09fded7-a0f8-44ac-8ea3-82f95d33f17e}, !- Default Interior SubSurface Constructions Name
+  ,                                       !- Interior Partition Construction Name
+  ,                                       !- Space Shading Construction Name
+  ,                                       !- Building Shading Construction Name
+  ,                                       !- Site Shading Construction Name
+  ;                                       !- Adiabatic Surface Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {a80481bf-09fb-49cd-9ef1-b7ce05a38ea5}, !- Handle
+  Default Surface Constructions 1,        !- Name
+  ,                                       !- Floor Construction Name
+  ,                                       !- Wall Construction Name
+  ;                                       !- Roof Ceiling Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {09083690-83eb-4813-97ca-59372224885e}, !- Handle
+  Default Surface Constructions 2,        !- Name
+  {e513fb0a-703c-4277-b58b-17d7606b7239}, !- Floor Construction Name
+  {46876748-0be0-410e-8809-686003182872}, !- Wall Construction Name
+  {f737038c-443e-4fc5-933f-cda761c755e1}; !- Roof Ceiling Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {075f809f-09cc-4e02-9964-d5402edecadc}, !- Handle
+  Default Surface Constructions 3,        !- Name
+  {37cb7c9c-5bed-4381-bb35-916c367a08d3}, !- Floor Construction Name
+  {07347d7e-ce77-4cc3-9f17-4a3bad359971}, !- Wall Construction Name
+  ;                                       !- Roof Ceiling Construction Name
+
+OS:DefaultSubSurfaceConstructions,
+  {f09fded7-a0f8-44ac-8ea3-82f95d33f17e}, !- Handle
+  Default Sub Surface Constructions 1,    !- Name
+  ,                                       !- Fixed Window Construction Name
+  ,                                       !- Operable Window Construction Name
+  ,                                       !- Door Construction Name
+  ,                                       !- Glass Door Construction Name
+  ,                                       !- Overhead Door Construction Name
+  ,                                       !- Skylight Construction Name
+  ,                                       !- Tubular Daylight Dome Construction Name
+  ;                                       !- Tubular Daylight Diffuser Construction Name
+
+OS:DefaultSubSurfaceConstructions,
+  {0ec31d21-409c-401e-8225-e2a06a68ed4f}, !- Handle
+  Default Sub Surface Constructions 2,    !- Name
+  {6c011959-95d0-4ac1-9efa-b21cea036eec}, !- Fixed Window Construction Name
+  {6c011959-95d0-4ac1-9efa-b21cea036eec}, !- Operable Window Construction Name
+  {0b3191dc-c04b-4958-9632-b90dd77a96e8}, !- Door Construction Name
+  {a535986b-5496-4847-a50f-467e1d572cb9}, !- Glass Door Construction Name
+  {a629b0ea-0c31-482e-95b8-378c274a4ca9}, !- Overhead Door Construction Name
+  {ab140bff-d252-4cf1-9962-d6e383924f05}, !- Skylight Construction Name
+  ,                                       !- Tubular Daylight Dome Construction Name
+  ;                                       !- Tubular Daylight Diffuser Construction Name
+
+OS:SpaceType,
+  {5faffe5b-a7f7-46d2-9eff-9de85771e0fe}, !- Handle
+  ProgramType_8ee359b2;                   !- Name
+
+OS:People:Definition,
+  {302ba45e-829e-48b3-9dfe-d6d209586253}, !- Handle
+  People_56f112ee,                        !- Name
+  People/Area,                            !- Number of People Calculation Method
+  ,                                       !- Number of People {people}
+  0.167,                                  !- People per Space Floor Area {person/m2}
+  ,                                       !- Space Floor Area per Person {m2/person}
+  0.3,                                    !- Fraction Radiant
+  Autocalculate;                          !- Sensible Heat Fraction
+
+OS:People,
+  {881e16e5-0665-422b-ba6c-bcfbc8a9c76a}, !- Handle
+  People_56f112ee,                        !- Name
+  {302ba45e-829e-48b3-9dfe-d6d209586253}, !- People Definition Name
+  {5faffe5b-a7f7-46d2-9eff-9de85771e0fe}, !- Space or SpaceType Name
+  {63095ed3-12f5-40a4-817a-952b63e14991}, !- Number of People Schedule Name
+  {5b66a570-8112-4256-9e01-83d3589a75a3}, !- Activity Level Schedule Name
+  ,                                       !- Surface Name/Angle Factor List Name
+  ,                                       !- Work Efficiency Schedule Name
+  ,                                       !- Clothing Insulation Schedule Name
+  ,                                       !- Air Velocity Schedule Name
+  1;                                      !- Multiplier
+
+OS:Material,
+  {df8180a4-4449-4a18-ad2a-70856b40f807}, !- Handle
+  Generic Roof Membrane,                  !- Name
+  MediumRough,                            !- Roughness
+  0.01,                                   !- Thickness {m}
+  0.16,                                   !- Conductivity {W/m-K}
+  1120,                                   !- Density {kg/m3}
+  1460,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.65,                                   !- Solar Absorptance
+  0.65;                                   !- Visible Absorptance
+
+OS:Material,
+  {05bba0c8-87c4-45d1-a44d-e374898fd402}, !- Handle
+  Generic Acoustic Tile,                  !- Name
+  MediumSmooth,                           !- Roughness
+  0.02,                                   !- Thickness {m}
+  0.06,                                   !- Conductivity {W/m-K}
+  368,                                    !- Density {kg/m3}
+  590,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.2,                                    !- Solar Absorptance
+  0.2;                                    !- Visible Absorptance
+
+OS:Material,
+  {0e57e0f0-060a-41f1-a72f-a7d14fee1824}, !- Handle
+  Generic 25mm Wood,                      !- Name
+  MediumSmooth,                           !- Roughness
+  0.0254,                                 !- Thickness {m}
+  0.15,                                   !- Conductivity {W/m-K}
+  608,                                    !- Density {kg/m3}
+  1630,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.5,                                    !- Solar Absorptance
+  0.5;                                    !- Visible Absorptance
+
+OS:Material,
+  {d654b629-9e76-497f-a464-7760a4a172c6}, !- Handle
+  Generic HW Concrete,                    !- Name
+  MediumRough,                            !- Roughness
+  0.2,                                    !- Thickness {m}
+  1.95,                                   !- Conductivity {W/m-K}
+  2240,                                   !- Density {kg/m3}
+  900,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.8,                                    !- Solar Absorptance
+  0.8;                                    !- Visible Absorptance
+
+OS:WindowMaterial:Gas,
+  {31c8a538-e3e5-44fc-b2fc-9990a37533ed}, !- Handle
+  Generic Window Air Gap,                 !- Name
+  Air,                                    !- Gas Type
+  0.0127;                                 !- Thickness {m}
+
+OS:WindowMaterial:Gas,
+  {478372c6-f06f-410c-ab27-d423b5863c66}, !- Handle
+  Generic Window Argon Gap,               !- Name
+  Argon,                                  !- Gas Type
+  0.0127;                                 !- Thickness {m}
+
+OS:Material,
+  {bbb6ee51-4e5e-4eda-8640-bf3328773a36}, !- Handle
+  Generic Gypsum Board,                   !- Name
+  MediumSmooth,                           !- Roughness
+  0.0127,                                 !- Thickness {m}
+  0.16,                                   !- Conductivity {W/m-K}
+  800,                                    !- Density {kg/m3}
+  1090,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.5,                                    !- Solar Absorptance
+  0.5;                                    !- Visible Absorptance
+
+OS:Material,
+  {c979aeda-e7ad-485f-a364-0a83693df895}, !- Handle
+  Generic Wall Air Gap,                   !- Name
+  Smooth,                                 !- Roughness
+  0.1,                                    !- Thickness {m}
+  0.667,                                  !- Conductivity {W/m-K}
+  1.28,                                   !- Density {kg/m3}
+  1000,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {98329088-4545-43d6-b030-a2352275ad68}, !- Handle
+  Generic Ceiling Air Gap,                !- Name
+  Smooth,                                 !- Roughness
+  0.1,                                    !- Thickness {m}
+  0.556,                                  !- Conductivity {W/m-K}
+  1.28,                                   !- Density {kg/m3}
+  1000,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:Material,
+  {5e8f0cc7-a530-4fb4-a991-9b706e95dbb0}, !- Handle
+  Generic Brick,                          !- Name
+  MediumRough,                            !- Roughness
+  0.1,                                    !- Thickness {m}
+  0.9,                                    !- Conductivity {W/m-K}
+  1920,                                   !- Density {kg/m3}
+  790,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.65,                                   !- Solar Absorptance
+  0.65;                                   !- Visible Absorptance
+
+OS:Material,
+  {07ae7ca6-071b-4b66-9243-2b75a6ef8760}, !- Handle
+  Generic 50mm Insulation,                !- Name
+  MediumRough,                            !- Roughness
+  0.05,                                   !- Thickness {m}
+  0.03,                                   !- Conductivity {W/m-K}
+  43,                                     !- Density {kg/m3}
+  1210,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:WindowMaterial:Glazing,
+  {9c0cf142-b953-48b9-9992-4a29799ea901}, !- Handle
+  Generic Low-e Glass,                    !- Name
+  SpectralAverage,                        !- Optical Data Type
+  ,                                       !- Window Glass Spectral Data Set Name
+  0.006,                                  !- Thickness {m}
+  0.45,                                   !- Solar Transmittance at Normal Incidence
+  0.36,                                   !- Front Side Solar Reflectance at Normal Incidence
+  0.36,                                   !- Back Side Solar Reflectance at Normal Incidence
+  0.71,                                   !- Visible Transmittance at Normal Incidence
+  0.21,                                   !- Front Side Visible Reflectance at Normal Incidence
+  0.21,                                   !- Back Side Visible Reflectance at Normal Incidence
+  0,                                      !- Infrared Transmittance at Normal Incidence
+  0.84,                                   !- Front Side Infrared Hemispherical Emissivity
+  0.047,                                  !- Back Side Infrared Hemispherical Emissivity
+  1,                                      !- Conductivity {W/m-K}
+  1,                                      !- Dirt Correction Factor for Solar and Visible Transmittance
+  No;                                     !- Solar Diffusing
+
+OS:Material,
+  {b4d5a487-40a7-4d24-b3c8-ed13e4d3b480}, !- Handle
+  Generic Painted Metal,                  !- Name
+  Smooth,                                 !- Roughness
+  0.0015,                                 !- Thickness {m}
+  45,                                     !- Conductivity {W/m-K}
+  7690,                                   !- Density {kg/m3}
+  410,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.5,                                    !- Solar Absorptance
+  0.5;                                    !- Visible Absorptance
+
+OS:Material,
+  {1c7596e2-e0ee-4c57-91f3-f0b6c7ca3c89}, !- Handle
+  Generic LW Concrete,                    !- Name
+  MediumRough,                            !- Roughness
+  0.1,                                    !- Thickness {m}
+  0.53,                                   !- Conductivity {W/m-K}
+  1280,                                   !- Density {kg/m3}
+  840,                                    !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.8,                                    !- Solar Absorptance
+  0.8;                                    !- Visible Absorptance
+
+OS:Material,
+  {cc63338d-51d5-4d7e-8cad-b9219b800fc4}, !- Handle
+  Generic 25mm Insulation,                !- Name
+  MediumRough,                            !- Roughness
+  0.025,                                  !- Thickness {m}
+  0.03,                                   !- Conductivity {W/m-K}
+  43,                                     !- Density {kg/m3}
+  1210,                                   !- Specific Heat {J/kg-K}
+  0.9,                                    !- Thermal Absorptance
+  0.7,                                    !- Solar Absorptance
+  0.7;                                    !- Visible Absorptance
+
+OS:WindowMaterial:Glazing,
+  {344a08fd-9df2-4233-a309-7ce038aa2569}, !- Handle
+  Generic Clear Glass,                    !- Name
+  SpectralAverage,                        !- Optical Data Type
+  ,                                       !- Window Glass Spectral Data Set Name
+  0.006,                                  !- Thickness {m}
+  0.77,                                   !- Solar Transmittance at Normal Incidence
+  0.07,                                   !- Front Side Solar Reflectance at Normal Incidence
+  0.07,                                   !- Back Side Solar Reflectance at Normal Incidence
+  0.88,                                   !- Visible Transmittance at Normal Incidence
+  0.08,                                   !- Front Side Visible Reflectance at Normal Incidence
+  0.08,                                   !- Back Side Visible Reflectance at Normal Incidence
+  0,                                      !- Infrared Transmittance at Normal Incidence
+  0.84,                                   !- Front Side Infrared Hemispherical Emissivity
+  0.84,                                   !- Back Side Infrared Hemispherical Emissivity
+  1,                                      !- Conductivity {W/m-K}
+  1,                                      !- Dirt Correction Factor for Solar and Visible Transmittance
+  No;                                     !- Solar Diffusing
+
+OS:Construction,
+  {1e92bc2f-d47b-40a2-b908-6bbe44b90dd1}, !- Handle
+  Generic Interior Door,                  !- Name
+  ,                                       !- Surface Rendering Name
+  {0e57e0f0-060a-41f1-a72f-a7d14fee1824}; !- Layer 1
+
+OS:Construction,
+  {843165f4-b08b-4099-96c6-df5091993e6a}, !- Handle
+  Generic Single Pane,                    !- Name
+  ,                                       !- Surface Rendering Name
+  {344a08fd-9df2-4233-a309-7ce038aa2569}; !- Layer 1
+
+OS:Construction,
+  {697bff88-edb4-4f73-a3d9-ae02705c04a6}, !- Handle
+  Generic Shade,                          !- Name
+  ,                                       !- Surface Rendering Name
+  {1206a29b-a85f-4a6e-bdc1-e33688cf414a}; !- Layer 1
+
+OS:Material,
+  {1206a29b-a85f-4a6e-bdc1-e33688cf414a}, !- Handle
+  Material 1,                             !- Name
+  Smooth,                                 !- Roughness
+  0.1,                                    !- Thickness {m}
+  0.1,                                    !- Conductivity {W/m-K}
+  0.1,                                    !- Density {kg/m3}
+  100,                                    !- Specific Heat {J/kg-K}
+  ,                                       !- Thermal Absorptance
+  0.65,                                   !- Solar Absorptance
+  0.65;                                   !- Visible Absorptance
+
+OS:Construction,
+  {2cbb2add-44ad-4866-a233-98519e05ced0}, !- Handle
+  Generic Context,                        !- Name
+  ,                                       !- Surface Rendering Name
+  {e05b7bb8-0090-4e28-8ca5-72771d75d4cd}; !- Layer 1
+
+OS:Material,
+  {e05b7bb8-0090-4e28-8ca5-72771d75d4cd}, !- Handle
+  Material 2,                             !- Name
+  Smooth,                                 !- Roughness
+  0.1,                                    !- Thickness {m}
+  0.1,                                    !- Conductivity {W/m-K}
+  0.1,                                    !- Density {kg/m3}
+  100,                                    !- Specific Heat {J/kg-K}
+  ,                                       !- Thermal Absorptance
+  0.8,                                    !- Solar Absorptance
+  0.8;                                    !- Visible Absorptance
+
+OS:Construction,
+  {fd6ad056-140a-4053-8036-5090cb29aeba}, !- Handle
+  Generic Interior Ceiling,               !- Name
+  ,                                       !- Surface Rendering Name
+  {1c7596e2-e0ee-4c57-91f3-f0b6c7ca3c89}, !- Layer 1
+  {98329088-4545-43d6-b030-a2352275ad68}, !- Layer 2
+  {05bba0c8-87c4-45d1-a44d-e374898fd402}; !- Layer 3
+
+OS:Construction,
+  {2e4a1d5d-3625-4377-8f0f-4c18f59999bc}, !- Handle
+  Generic Interior Wall,                  !- Name
+  ,                                       !- Surface Rendering Name
+  {bbb6ee51-4e5e-4eda-8640-bf3328773a36}, !- Layer 1
+  {c979aeda-e7ad-485f-a364-0a83693df895}, !- Layer 2
+  {bbb6ee51-4e5e-4eda-8640-bf3328773a36}; !- Layer 3
+
+OS:Construction,
+  {7fcead52-5d56-4c54-95dc-6ee6c5808894}, !- Handle
+  Generic Exposed Floor,                  !- Name
+  ,                                       !- Surface Rendering Name
+  {b4d5a487-40a7-4d24-b3c8-ed13e4d3b480}, !- Layer 1
+  {98329088-4545-43d6-b030-a2352275ad68}, !- Layer 2
+  {07ae7ca6-071b-4b66-9243-2b75a6ef8760}, !- Layer 3
+  {1c7596e2-e0ee-4c57-91f3-f0b6c7ca3c89}; !- Layer 4
+
+OS:Construction,
+  {23ac60c7-1216-4a44-9ba6-a1635690127d}, !- Handle
+  Generic Interior Floor,                 !- Name
+  ,                                       !- Surface Rendering Name
+  {05bba0c8-87c4-45d1-a44d-e374898fd402}, !- Layer 1
+  {98329088-4545-43d6-b030-a2352275ad68}, !- Layer 2
+  {1c7596e2-e0ee-4c57-91f3-f0b6c7ca3c89}; !- Layer 3
+
+OS:Construction,
+  {19765554-3577-45d5-b003-9108fa3abcc7}, !- Handle
+  Generic Ground Slab,                    !- Name
+  ,                                       !- Surface Rendering Name
+  {07ae7ca6-071b-4b66-9243-2b75a6ef8760}, !- Layer 1
+  {d654b629-9e76-497f-a464-7760a4a172c6}; !- Layer 2
+
+OS:Construction,
+  {8132d079-9516-47ff-b2e2-12cf2603c628}, !- Handle
+  Generic Roof,                           !- Name
+  ,                                       !- Surface Rendering Name
+  {df8180a4-4449-4a18-ad2a-70856b40f807}, !- Layer 1
+  {07ae7ca6-071b-4b66-9243-2b75a6ef8760}, !- Layer 2
+  {1c7596e2-e0ee-4c57-91f3-f0b6c7ca3c89}, !- Layer 3
+  {98329088-4545-43d6-b030-a2352275ad68}, !- Layer 4
+  {05bba0c8-87c4-45d1-a44d-e374898fd402}; !- Layer 5
+
+OS:Construction,
+  {c965d3a4-e0c9-410b-90e8-299ad620f8a9}, !- Handle
+  Generic Exterior Wall,                  !- Name
+  ,                                       !- Surface Rendering Name
+  {5e8f0cc7-a530-4fb4-a991-9b706e95dbb0}, !- Layer 1
+  {1c7596e2-e0ee-4c57-91f3-f0b6c7ca3c89}, !- Layer 2
+  {07ae7ca6-071b-4b66-9243-2b75a6ef8760}, !- Layer 3
+  {c979aeda-e7ad-485f-a364-0a83693df895}, !- Layer 4
+  {bbb6ee51-4e5e-4eda-8640-bf3328773a36}; !- Layer 5
+
+OS:Construction,
+  {81580bd4-312b-480d-ba29-12f940045a03}, !- Handle
+  Generic Underground Wall,               !- Name
+  ,                                       !- Surface Rendering Name
+  {07ae7ca6-071b-4b66-9243-2b75a6ef8760}, !- Layer 1
+  {d654b629-9e76-497f-a464-7760a4a172c6}, !- Layer 2
+  {c979aeda-e7ad-485f-a364-0a83693df895}, !- Layer 3
+  {bbb6ee51-4e5e-4eda-8640-bf3328773a36}; !- Layer 4
+
+OS:Construction:AirBoundary,
+  {cd0694dd-05d4-4d03-bb08-f735eb3c6316}, !- Handle
+  Generic Air Boundary,                   !- Name
+  None,                                   !- Air Exchange Method
+  0;                                      !- Simple Mixing Air Changes per Hour {1/hr}
+
+OS:Construction,
+  {d94a735b-d4f5-4524-a444-dad53a246a30}, !- Handle
+  Generic Underground Roof,               !- Name
+  ,                                       !- Surface Rendering Name
+  {07ae7ca6-071b-4b66-9243-2b75a6ef8760}, !- Layer 1
+  {d654b629-9e76-497f-a464-7760a4a172c6}, !- Layer 2
+  {98329088-4545-43d6-b030-a2352275ad68}, !- Layer 3
+  {05bba0c8-87c4-45d1-a44d-e374898fd402}; !- Layer 4
+
+OS:Construction,
+  {afaaf70b-e487-4ec7-9eb1-c5d5d889cfd1}, !- Handle
+  Generic Double Pane,                    !- Name
+  ,                                       !- Surface Rendering Name
+  {9c0cf142-b953-48b9-9992-4a29799ea901}, !- Layer 1
+  {31c8a538-e3e5-44fc-b2fc-9990a37533ed}, !- Layer 2
+  {344a08fd-9df2-4233-a309-7ce038aa2569}; !- Layer 3
+
+OS:Construction,
+  {8aabf16b-ae89-4bd7-b0b9-34a690f0c95a}, !- Handle
+  Generic Exterior Door,                  !- Name
+  ,                                       !- Surface Rendering Name
+  {b4d5a487-40a7-4d24-b3c8-ed13e4d3b480}, !- Layer 1
+  {cc63338d-51d5-4d7e-8cad-b9219b800fc4}, !- Layer 2
+  {b4d5a487-40a7-4d24-b3c8-ed13e4d3b480}; !- Layer 3
+
+OS:DefaultConstructionSet,
+  {6ab5c741-bdcb-497f-bff5-a5215234a643}, !- Handle
+  Default Generic Construction Set,       !- Name
+  {6d539851-8d1c-4afe-bb2a-7b06efc120f5}, !- Default Exterior Surface Constructions Name
+  {2142c2d9-f3e0-4aef-866f-41a0812cb2d7}, !- Default Interior Surface Constructions Name
+  {738c162b-90e7-427b-8136-9a0d9b724eb7}, !- Default Ground Contact Surface Constructions Name
+  {7144e8dc-79af-42e3-9a41-a96815e14a29}, !- Default Exterior SubSurface Constructions Name
+  {407d0024-5963-436e-97ef-6a7050173bd5}, !- Default Interior SubSurface Constructions Name
+  {cd0694dd-05d4-4d03-bb08-f735eb3c6316}, !- Interior Partition Construction Name
+  {697bff88-edb4-4f73-a3d9-ae02705c04a6}, !- Space Shading Construction Name
+  ,                                       !- Building Shading Construction Name
+  ,                                       !- Site Shading Construction Name
+  {2e4a1d5d-3625-4377-8f0f-4c18f59999bc}; !- Adiabatic Surface Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {2142c2d9-f3e0-4aef-866f-41a0812cb2d7}, !- Handle
+  Default Surface Constructions 4,        !- Name
+  {23ac60c7-1216-4a44-9ba6-a1635690127d}, !- Floor Construction Name
+  {2e4a1d5d-3625-4377-8f0f-4c18f59999bc}, !- Wall Construction Name
+  {fd6ad056-140a-4053-8036-5090cb29aeba}; !- Roof Ceiling Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {6d539851-8d1c-4afe-bb2a-7b06efc120f5}, !- Handle
+  Default Surface Constructions 5,        !- Name
+  {7fcead52-5d56-4c54-95dc-6ee6c5808894}, !- Floor Construction Name
+  {c965d3a4-e0c9-410b-90e8-299ad620f8a9}, !- Wall Construction Name
+  {8132d079-9516-47ff-b2e2-12cf2603c628}; !- Roof Ceiling Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {738c162b-90e7-427b-8136-9a0d9b724eb7}, !- Handle
+  Default Surface Constructions 6,        !- Name
+  {19765554-3577-45d5-b003-9108fa3abcc7}, !- Floor Construction Name
+  {81580bd4-312b-480d-ba29-12f940045a03}, !- Wall Construction Name
+  {d94a735b-d4f5-4524-a444-dad53a246a30}; !- Roof Ceiling Construction Name
+
+OS:DefaultSubSurfaceConstructions,
+  {407d0024-5963-436e-97ef-6a7050173bd5}, !- Handle
+  Default Sub Surface Constructions 3,    !- Name
+  {843165f4-b08b-4099-96c6-df5091993e6a}, !- Fixed Window Construction Name
+  {843165f4-b08b-4099-96c6-df5091993e6a}, !- Operable Window Construction Name
+  {1e92bc2f-d47b-40a2-b908-6bbe44b90dd1}, !- Door Construction Name
+  {843165f4-b08b-4099-96c6-df5091993e6a}, !- Glass Door Construction Name
+  ,                                       !- Overhead Door Construction Name
+  ,                                       !- Skylight Construction Name
+  ,                                       !- Tubular Daylight Dome Construction Name
+  ;                                       !- Tubular Daylight Diffuser Construction Name
+
+OS:DefaultSubSurfaceConstructions,
+  {7144e8dc-79af-42e3-9a41-a96815e14a29}, !- Handle
+  Default Sub Surface Constructions 4,    !- Name
+  {afaaf70b-e487-4ec7-9eb1-c5d5d889cfd1}, !- Fixed Window Construction Name
+  {afaaf70b-e487-4ec7-9eb1-c5d5d889cfd1}, !- Operable Window Construction Name
+  {8aabf16b-ae89-4bd7-b0b9-34a690f0c95a}, !- Door Construction Name
+  {afaaf70b-e487-4ec7-9eb1-c5d5d889cfd1}, !- Glass Door Construction Name
+  {8aabf16b-ae89-4bd7-b0b9-34a690f0c95a}, !- Overhead Door Construction Name
+  {afaaf70b-e487-4ec7-9eb1-c5d5d889cfd1}, !- Skylight Construction Name
+  ,                                       !- Tubular Daylight Dome Construction Name
+  ;                                       !- Tubular Daylight Diffuser Construction Name
+
+OS:Space,
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Handle
+  classroom_9d637254_Space,               !- Name
+  {5faffe5b-a7f7-46d2-9eff-9de85771e0fe}, !- Space Type Name
+  {53b66cdf-ab5f-47d3-86de-9af28f56a5ac}, !- Default Construction Set Name
+  ,                                       !- Default Schedule Set Name
+  ,                                       !- Direction of Relative North {deg}
+  ,                                       !- X Origin {m}
+  ,                                       !- Y Origin {m}
+  ,                                       !- Z Origin {m}
+  {ddc3d184-5104-4533-b5e5-f6e0f204448f}, !- Building Story Name
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}; !- Thermal Zone Name
+
+OS:ThermalZone,
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- Handle
+  classroom_9d637254,                     !- Name
+  ,                                       !- Multiplier
+  3.6,                                    !- Ceiling Height {m}
+  252.72,                                 !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  ,                                       !- Zone Conditioning Equipment List Name
+  {0cd02d56-1c95-4c65-9e69-21a82ad6c296}, !- Zone Air Inlet Port List
+  {4e675c14-095f-4b33-9540-47333a0cd904}, !- Zone Air Exhaust Port List
+  {1c40b5a9-a34c-4390-8422-be82daedc7be}, !- Zone Air Node Name
+  {1141172b-0b03-4169-9ed7-ba911bf7cded}, !- Zone Return Air Port List
+  ,                                       !- Primary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Primary Daylighting Control
+  ,                                       !- Secondary Daylighting Control Name
+  ,                                       !- Fraction of Zone Controlled by Secondary Daylighting Control
+  ,                                       !- Illuminance Map Name
+  ,                                       !- Group Rendering Name
+  ,                                       !- Thermostat Name
+  No;                                     !- Use Ideal Air Loads
+
+OS:Node,
+  {e845b93c-d1f6-4568-8167-466107771ed6}, !- Handle
+  Node 1,                                 !- Name
+  {1c40b5a9-a34c-4390-8422-be82daedc7be}, !- Inlet Port
+  ;                                       !- Outlet Port
+
+OS:Connection,
+  {1c40b5a9-a34c-4390-8422-be82daedc7be}, !- Handle
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- Source Object
+  11,                                     !- Outlet Port
+  {e845b93c-d1f6-4568-8167-466107771ed6}, !- Target Object
+  2;                                      !- Inlet Port
+
+OS:PortList,
+  {0cd02d56-1c95-4c65-9e69-21a82ad6c296}, !- Handle
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- HVAC Component
+  {eac21301-52a1-471b-a8f7-6a2e11b041b9}; !- Port 1
+
+OS:PortList,
+  {4e675c14-095f-4b33-9540-47333a0cd904}, !- Handle
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- HVAC Component
+  {9a305b05-fb82-4334-98d9-ad8e80872e0a}; !- Port 1
+
+OS:PortList,
+  {1141172b-0b03-4169-9ed7-ba911bf7cded}, !- Handle
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}; !- HVAC Component
+
+OS:Sizing:Zone,
+  {30e5541b-3a93-4881-98b8-e0898a09911d}, !- Handle
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- Zone or ZoneList Name
+  SupplyAirTemperature,                   !- Zone Cooling Design Supply Air Temperature Input Method
+  14,                                     !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
+  40,                                     !- Zone Heating Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kg-H2O/kg-air}
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  ,                                       !- Cooling Design Air Flow Rate {m3/s}
+  ,                                       !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Cooling Minimum Air Flow {m3/s}
+  ,                                       !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  ,                                       !- Heating Design Air Flow Rate {m3/s}
+  ,                                       !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  ,                                       !- Heating Maximum Air Flow {m3/s}
+  ,                                       !- Heating Maximum Air Flow Fraction
+  No,                                     !- Account for Dedicated Outdoor Air System
+  NeutralSupplyAir,                       !- Dedicated Outdoor Air System Control Strategy
+  autosize,                               !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
+  autosize,                               !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
+  Sensible Load Only No Latent Load,      !- Zone Load Sizing Method
+  HumidityRatioDifference,                !- Zone Latent Cooling Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Dehumidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.005,                                  !- Zone Cooling Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+  HumidityRatioDifference,                !- Zone Latent Heating Design Supply Air Humidity Ratio Input Method
+  ,                                       !- Zone Humidification Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.005;                                  !- Zone Humidification Design Supply Air Humidity Ratio Difference {kgWater/kgDryAir}
+
+OS:ZoneHVAC:EquipmentList,
+  {58d6d05f-3f81-441e-8ab3-b95d8f30cbe8}, !- Handle
+  Zone HVAC Equipment List 1,             !- Name
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- Thermal Zone
+  ,                                       !- Load Distribution Scheme
+  {0886639a-3f71-4fb0-be49-0126b383325e}, !- Zone Equipment 1
+  1,                                      !- Zone Equipment Cooling Sequence 1
+  1,                                      !- Zone Equipment Heating or No-Load Sequence 1
+  ,                                       !- Zone Equipment Sequential Cooling Fraction Schedule Name 1
+  ;                                       !- Zone Equipment Sequential Heating Fraction Schedule Name 1
+
+OS:AdditionalProperties,
+  {3da7c260-62f7-4a85-82ec-26485acdb3bf}, !- Handle
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom;                              !- Feature Value 1
+
+OS:AdditionalProperties,
+  {670eb9b6-e8fc-4e11-8adf-b864bf29ecb6}, !- Handle
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom;                              !- Feature Value 1
+
+OS:BuildingStory,
+  {ddc3d184-5104-4533-b5e5-f6e0f204448f}, !- Handle
+  Floor1,                                 !- Name
+  ,                                       !- Nominal Z Coordinate {m}
+  ,                                       !- Nominal Floor to Floor Height {m}
+  ,                                       !- Default Construction Set Name
+  ,                                       !- Default Schedule Set Name
+  ;                                       !- Group Rendering Name
+
+OS:Surface,
+  {ba1fdd79-d2f6-4af3-b3e2-401ca08cb01b}, !- Handle
+  classroom_9d637254..Face0,              !- Name
+  Floor,                                  !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Ground,                                 !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  NoSun,                                  !- Sun Exposure
+  NoWind,                                 !- Wind Exposure
+  ,                                       !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  9, 3.5, 0,                              !- X,Y,Z Vertex 1 {m}
+  9, -4, 0,                               !- X,Y,Z Vertex 2 {m}
+  0, -4, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, 3.5, 0,                              !- X,Y,Z Vertex 4 {m}
+  1.8, 3.5, 0,                            !- X,Y,Z Vertex 5 {m}
+  1.8, 4, 0,                              !- X,Y,Z Vertex 6 {m}
+  7.2, 4, 0,                              !- X,Y,Z Vertex 7 {m}
+  7.2, 3.5, 0;                            !- X,Y,Z Vertex 8 {m}
+
+OS:AdditionalProperties,
+  {5f6c2ffb-b409-4e4e-b770-f2e9648a4c2f}, !- Handle
+  {ba1fdd79-d2f6-4af3-b3e2-401ca08cb01b}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face0;              !- Feature Value 1
+
+OS:Surface,
+  {4babb371-e2c0-42b8-b293-150e3a4d02f7}, !- Handle
+  classroom_9d637254..Face1,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  7.2, 3.5, 3.6,                          !- X,Y,Z Vertex 1 {m}
+  7.2, 3.5, 0,                            !- X,Y,Z Vertex 2 {m}
+  7.2, 4, 0,                              !- X,Y,Z Vertex 3 {m}
+  7.2, 4, 3.6;                            !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {c8c3dc26-e3ea-4e6a-aedd-f3ff57c05361}, !- Handle
+  {4babb371-e2c0-42b8-b293-150e3a4d02f7}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face1;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {7237ab46-be8b-406e-a3a5-dcad92b11377}, !- Handle
+  Airflow Network Crack 1,                !- Name
+  0.00018,                                !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {49411f5e-d810-49e6-91fd-1b19544a54e3}, !- Handle
+  {4babb371-e2c0-42b8-b293-150e3a4d02f7}, !- Surface Name
+  {7237ab46-be8b-406e-a3a5-dcad92b11377}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:Surface,
+  {7927b86a-b738-4ba9-9721-6458ed7f2449}, !- Handle
+  classroom_9d637254..Face2,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  9, 3.5, 3.6,                            !- X,Y,Z Vertex 1 {m}
+  9, 3.5, 0,                              !- X,Y,Z Vertex 2 {m}
+  7.2, 3.5, 0,                            !- X,Y,Z Vertex 3 {m}
+  7.2, 3.5, 3.6;                          !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {1f1e9c0d-07f6-4445-98e4-3703fd589ed6}, !- Handle
+  {7927b86a-b738-4ba9-9721-6458ed7f2449}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face2;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {7d7500fa-325c-4502-907a-e4627dffdb66}, !- Handle
+  Airflow Network Crack 2,                !- Name
+  0.000438,                               !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {bba2ed45-80ab-4afe-9231-6ee27417198c}, !- Handle
+  {7927b86a-b738-4ba9-9721-6458ed7f2449}, !- Surface Name
+  {7d7500fa-325c-4502-907a-e4627dffdb66}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:SubSurface,
+  {9c4e1ed8-2547-4a37-89b0-cb73fe3786c6}, !- Handle
+  Door_c0697cd3,                          !- Name
+  Door,                                   !- Sub Surface Type
+  ,                                       !- Construction Name
+  {7927b86a-b738-4ba9-9721-6458ed7f2449}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  8.6, 3.5, 2.101,                        !- X,Y,Z Vertex 1 {m}
+  8.6, 3.5, 0.001,                        !- X,Y,Z Vertex 2 {m}
+  7.6, 3.5, 0.001,                        !- X,Y,Z Vertex 3 {m}
+  7.6, 3.5, 2.101;                        !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {c63644d8-5198-4861-886e-ba2615241776}, !- Handle
+  classroom_9d637254..Face3,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  9, -4, 3.6,                             !- X,Y,Z Vertex 1 {m}
+  9, -4, 0,                               !- X,Y,Z Vertex 2 {m}
+  9, 3.5, 0,                              !- X,Y,Z Vertex 3 {m}
+  9, 3.5, 3.6;                            !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {b8fdad2d-7ff1-432d-bba4-5808d5cc5da7}, !- Handle
+  {c63644d8-5198-4861-886e-ba2615241776}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face3;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {127a8df7-a48a-4e7d-82ab-24450a632682}, !- Handle
+  Airflow Network Crack 3,                !- Name
+  0.0027,                                 !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {26742096-6a89-47ef-9e4f-ea3dbaa43a18}, !- Handle
+  {c63644d8-5198-4861-886e-ba2615241776}, !- Surface Name
+  {127a8df7-a48a-4e7d-82ab-24450a632682}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:Surface,
+  {ea78d16a-c9fe-4672-9631-40df6458f604}, !- Handle
+  classroom_9d637254..Face4,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, -4, 3.6,                             !- X,Y,Z Vertex 1 {m}
+  0, -4, 0,                               !- X,Y,Z Vertex 2 {m}
+  9, -4, 0,                               !- X,Y,Z Vertex 3 {m}
+  9, -4, 3.6;                             !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {593a9eda-903c-47b4-af41-8341178c41f7}, !- Handle
+  {ea78d16a-c9fe-4672-9631-40df6458f604}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face4;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {bc1b2d03-6dc8-41ad-8cae-a92b65583f05}, !- Handle
+  Airflow Network Crack 4,                !- Name
+  0.0027,                                 !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {5ae6d614-1154-4b93-bfd4-d3cd0bc1f2a6}, !- Handle
+  {ea78d16a-c9fe-4672-9631-40df6458f604}, !- Surface Name
+  {bc1b2d03-6dc8-41ad-8cae-a92b65583f05}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:SubSurface,
+  {79470e48-54c9-4dad-8af9-1f51617ea6b4}, !- Handle
+  Aperture_999cce4a,                      !- Name
+  OperableWindow,                         !- Sub Surface Type
+  ,                                       !- Construction Name
+  {ea78d16a-c9fe-4672-9631-40df6458f604}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  1.65, -4, 2.4,                          !- X,Y,Z Vertex 1 {m}
+  1.65, -4, 1.2,                          !- X,Y,Z Vertex 2 {m}
+  3.15, -4, 1.2,                          !- X,Y,Z Vertex 3 {m}
+  3.15, -4, 2.4;                          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {b3c75b31-64a3-4fbc-a07e-a3248a7f87c5}, !- Handle
+  Aperture_70e2b756,                      !- Name
+  OperableWindow,                         !- Sub Surface Type
+  ,                                       !- Construction Name
+  {ea78d16a-c9fe-4672-9631-40df6458f604}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  3.75, -4, 2.4,                          !- X,Y,Z Vertex 1 {m}
+  3.75, -4, 1.2,                          !- X,Y,Z Vertex 2 {m}
+  5.25, -4, 1.2,                          !- X,Y,Z Vertex 3 {m}
+  5.25, -4, 2.4;                          !- X,Y,Z Vertex 4 {m}
+
+OS:SubSurface,
+  {1f24fbb8-47fa-430b-b1ad-20df8b7f5696}, !- Handle
+  Aperture_a57e415c,                      !- Name
+  OperableWindow,                         !- Sub Surface Type
+  ,                                       !- Construction Name
+  {ea78d16a-c9fe-4672-9631-40df6458f604}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  5.85, -4, 2.4,                          !- X,Y,Z Vertex 1 {m}
+  5.85, -4, 1.2,                          !- X,Y,Z Vertex 2 {m}
+  7.35, -4, 1.2,                          !- X,Y,Z Vertex 3 {m}
+  7.35, -4, 2.4;                          !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {771ab4b4-2aac-4047-8930-3e84163d2ec7}, !- Handle
+  classroom_9d637254..Face5,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 3.5, 3.6,                            !- X,Y,Z Vertex 1 {m}
+  0, 3.5, 0,                              !- X,Y,Z Vertex 2 {m}
+  0, -4, 0,                               !- X,Y,Z Vertex 3 {m}
+  0, -4, 3.6;                             !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {ba3ff848-69b8-4c0e-838e-c31c69af0751}, !- Handle
+  {771ab4b4-2aac-4047-8930-3e84163d2ec7}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face5;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {e913ca51-d2c3-4583-b00c-5539af079158}, !- Handle
+  Airflow Network Crack 5,                !- Name
+  0.0027,                                 !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {70fd5a98-ac67-4c60-9b6a-ddeb0bb73488}, !- Handle
+  {771ab4b4-2aac-4047-8930-3e84163d2ec7}, !- Surface Name
+  {e913ca51-d2c3-4583-b00c-5539af079158}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:Surface,
+  {d2d09fce-fae3-4a32-9917-0db7c4ed253f}, !- Handle
+  classroom_9d637254..Face6,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  1.8, 3.5, 3.6,                          !- X,Y,Z Vertex 1 {m}
+  1.8, 3.5, 0,                            !- X,Y,Z Vertex 2 {m}
+  0, 3.5, 0,                              !- X,Y,Z Vertex 3 {m}
+  0, 3.5, 3.6;                            !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {6b0d90af-2fef-4c7e-b839-936d78a76729}, !- Handle
+  {d2d09fce-fae3-4a32-9917-0db7c4ed253f}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face6;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {7719e9d9-83e7-4115-a8a1-2f83c09b49a1}, !- Handle
+  Airflow Network Crack 6,                !- Name
+  0.000438,                               !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {902121a8-d8e6-4d2b-b1c8-2a482f7d8833}, !- Handle
+  {d2d09fce-fae3-4a32-9917-0db7c4ed253f}, !- Surface Name
+  {7719e9d9-83e7-4115-a8a1-2f83c09b49a1}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:SubSurface,
+  {e3f3f493-4e89-4578-9520-32f913c3bf58}, !- Handle
+  Door_24ecceba,                          !- Name
+  Door,                                   !- Sub Surface Type
+  ,                                       !- Construction Name
+  {d2d09fce-fae3-4a32-9917-0db7c4ed253f}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  1.4, 3.5, 2.101,                        !- X,Y,Z Vertex 1 {m}
+  1.4, 3.5, 0.001,                        !- X,Y,Z Vertex 2 {m}
+  0.4, 3.5, 0.001,                        !- X,Y,Z Vertex 3 {m}
+  0.4, 3.5, 2.101;                        !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {6d34cbf0-76f7-4d10-ab5b-164417684b29}, !- Handle
+  classroom_9d637254..Face7,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  1.8, 4, 3.6,                            !- X,Y,Z Vertex 1 {m}
+  1.8, 4, 0,                              !- X,Y,Z Vertex 2 {m}
+  1.8, 3.5, 0,                            !- X,Y,Z Vertex 3 {m}
+  1.8, 3.5, 3.6;                          !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {f7436718-d423-4ea8-9eb4-3dee4aa0ddec}, !- Handle
+  {6d34cbf0-76f7-4d10-ab5b-164417684b29}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face7;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {c0047bee-39dc-4478-8b9d-cbd92d6b0d57}, !- Handle
+  Airflow Network Crack 7,                !- Name
+  0.00018,                                !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {b6f3c44b-70c3-45bc-9a41-7ddd1dffdc24}, !- Handle
+  {6d34cbf0-76f7-4d10-ab5b-164417684b29}, !- Surface Name
+  {c0047bee-39dc-4478-8b9d-cbd92d6b0d57}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:Surface,
+  {8f31958e-4e83-41e4-b992-67850575e9c4}, !- Handle
+  classroom_9d637254..Face8,              !- Name
+  Wall,                                   !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  7.2, 4, 3.6,                            !- X,Y,Z Vertex 1 {m}
+  7.2, 4, 0,                              !- X,Y,Z Vertex 2 {m}
+  1.8, 4, 0,                              !- X,Y,Z Vertex 3 {m}
+  1.8, 4, 3.6;                            !- X,Y,Z Vertex 4 {m}
+
+OS:AdditionalProperties,
+  {00bda159-90f8-4335-bf9b-9a5cc4deafbf}, !- Handle
+  {8f31958e-4e83-41e4-b992-67850575e9c4}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face8;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {0c4160c8-3627-4d8f-b78f-117fcd3112fb}, !- Handle
+  Airflow Network Crack 8,                !- Name
+  0.001404,                               !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {8b2aae51-311c-44f8-a1e5-4f9d4885e776}, !- Handle
+  {8f31958e-4e83-41e4-b992-67850575e9c4}, !- Surface Name
+  {0c4160c8-3627-4d8f-b78f-117fcd3112fb}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:SubSurface,
+  {486147c8-d6e0-4bd1-b07a-ac88528700f2}, !- Handle
+  Aperture_ab7d9017,                      !- Name
+  OperableWindow,                         !- Sub Surface Type
+  ,                                       !- Construction Name
+  {8f31958e-4e83-41e4-b992-67850575e9c4}, !- Surface Name
+  ,                                       !- Outside Boundary Condition Object
+  ,                                       !- View Factor to Ground
+  ,                                       !- Frame and Divider Name
+  ,                                       !- Multiplier
+  ,                                       !- Number of Vertices
+  6.75, 4, 2.4,                           !- X,Y,Z Vertex 1 {m}
+  6.75, 4, 1.2,                           !- X,Y,Z Vertex 2 {m}
+  2.25, 4, 1.2,                           !- X,Y,Z Vertex 3 {m}
+  2.25, 4, 2.4;                           !- X,Y,Z Vertex 4 {m}
+
+OS:Surface,
+  {03843e84-440d-4b4f-a2ad-e19575e61ea6}, !- Handle
+  classroom_9d637254..Face9,              !- Name
+  RoofCeiling,                            !- Surface Type
+  ,                                       !- Construction Name
+  {08828a65-b0d9-4fb3-8847-78e5eff5cf10}, !- Space Name
+  Outdoors,                               !- Outside Boundary Condition
+  ,                                       !- Outside Boundary Condition Object
+  SunExposed,                             !- Sun Exposure
+  WindExposed,                            !- Wind Exposure
+  Autocalculate,                          !- View Factor to Ground
+  ,                                       !- Number of Vertices
+  0, 3.5, 3.6,                            !- X,Y,Z Vertex 1 {m}
+  0, -4, 3.6,                             !- X,Y,Z Vertex 2 {m}
+  9, -4, 3.6,                             !- X,Y,Z Vertex 3 {m}
+  9, 3.5, 3.6,                            !- X,Y,Z Vertex 4 {m}
+  7.2, 3.5, 3.6,                          !- X,Y,Z Vertex 5 {m}
+  7.2, 4, 3.6,                            !- X,Y,Z Vertex 6 {m}
+  1.8, 4, 3.6,                            !- X,Y,Z Vertex 7 {m}
+  1.8, 3.5, 3.6;                          !- X,Y,Z Vertex 8 {m}
+
+OS:AdditionalProperties,
+  {93b21cd2-491f-4b45-abba-ff5cd3547448}, !- Handle
+  {03843e84-440d-4b4f-a2ad-e19575e61ea6}, !- Object Name
+  displayName,                            !- Feature Name 1
+  String,                                 !- Feature Data Type 1
+  classroom_9d637254..Face9;              !- Feature Value 1
+
+OS:AirflowNetworkCrack,
+  {980545db-1e1d-42fb-970b-249fe381c666}, !- Handle
+  Airflow Network Crack 9,                !- Name
+  0.00702,                                !- Air Mass Flow Coefficient at Reference Conditions {kg/s}
+  0.7,                                    !- Air Mass Flow Exponent {dimensionless}
+  {3136035b-d37b-4ea9-af6b-f32072585e73}; !- Reference Crack Conditions
+
+OS:AirflowNetworkSurface,
+  {2e656436-b2fd-4cd5-b493-1121976f3f2b}, !- Handle
+  {03843e84-440d-4b4f-a2ad-e19575e61ea6}, !- Surface Name
+  {980545db-1e1d-42fb-970b-249fe381c666}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:AirflowNetworkZone,
+  {a8d010e6-8965-425d-8a5c-2e38212f9664}, !- Handle
+  Airflow Network Zone 1,                 !- Name
+  {b4d33be1-97a3-4371-8cb0-7549faf1af4b}, !- Thermal Zone Name
+  NoVent,                                 !- Ventilation Control Mode
+  ,                                       !- Ventilation Control Zone Temperature Setpoint Schedule Name
+  ,                                       !- Minimum Venting Open Factor {dimensionless}
+  ,                                       !- Indoor and Outdoor Temperature Difference Lower Limit For Maximum Venting Open Factor {deltaC}
+  ,                                       !- Indoor and Outdoor Temperature Difference Upper Limit for Minimum Venting Open Factor {deltaC}
+  ;                                       !- Indoor and Outdoor Enthalpy Difference Lower Limit For Maximum Venting Open Factor {deltaJ/kg}
+
+OS:AirflowNetworkSimpleOpening,
+  {dd20a68b-1fe3-4469-bc9d-e68f37e48f71}, !- Handle
+  Airflow Network Simple Opening 1,       !- Name
+  0.0014,                                 !- Air Mass Flow Coefficient When Opening is Closed {kg/s-m}
+  0.65,                                   !- Air Mass Flow Exponent When Opening is Closed {dimensionless}
+  0.0001,                                 !- Minimum Density Difference for Two-Way Flow {kg/m3}
+  0.45;                                   !- Discharge Coefficient {dimensionless}
+
+OS:AirflowNetworkSurface,
+  {2e62870d-8556-47be-82d0-ad1a48ca0041}, !- Handle
+  {9c4e1ed8-2547-4a37-89b0-cb73fe3786c6}, !- Surface Name
+  {dd20a68b-1fe3-4469-bc9d-e68f37e48f71}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:AirflowNetworkSimpleOpening,
+  {5c5681b7-dfe9-433a-9d62-4accfe2e4655}, !- Handle
+  Airflow Network Simple Opening 2,       !- Name
+  0.00014,                                !- Air Mass Flow Coefficient When Opening is Closed {kg/s-m}
+  0.65,                                   !- Air Mass Flow Exponent When Opening is Closed {dimensionless}
+  0.0001,                                 !- Minimum Density Difference for Two-Way Flow {kg/m3}
+  0.45;                                   !- Discharge Coefficient {dimensionless}
+
+OS:AirflowNetworkSurface,
+  {d5cfe70a-a8c3-4f0d-bc0e-770037da809b}, !- Handle
+  {79470e48-54c9-4dad-8af9-1f51617ea6b4}, !- Surface Name
+  {5c5681b7-dfe9-433a-9d62-4accfe2e4655}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:AirflowNetworkSimpleOpening,
+  {c9a74c1d-8d52-44ff-80ef-ea3c79c36890}, !- Handle
+  Airflow Network Simple Opening 3,       !- Name
+  0.00014,                                !- Air Mass Flow Coefficient When Opening is Closed {kg/s-m}
+  0.65,                                   !- Air Mass Flow Exponent When Opening is Closed {dimensionless}
+  0.0001,                                 !- Minimum Density Difference for Two-Way Flow {kg/m3}
+  0.45;                                   !- Discharge Coefficient {dimensionless}
+
+OS:AirflowNetworkSurface,
+  {bcfacb88-0aad-41d4-a5d8-bb1a66277788}, !- Handle
+  {b3c75b31-64a3-4fbc-a07e-a3248a7f87c5}, !- Surface Name
+  {c9a74c1d-8d52-44ff-80ef-ea3c79c36890}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:AirflowNetworkSimpleOpening,
+  {e8145493-cadb-4771-820d-d3e7d0df99fe}, !- Handle
+  Airflow Network Simple Opening 4,       !- Name
+  0.00014,                                !- Air Mass Flow Coefficient When Opening is Closed {kg/s-m}
+  0.65,                                   !- Air Mass Flow Exponent When Opening is Closed {dimensionless}
+  0.0001,                                 !- Minimum Density Difference for Two-Way Flow {kg/m3}
+  0.45;                                   !- Discharge Coefficient {dimensionless}
+
+OS:AirflowNetworkSurface,
+  {ad732382-23ee-49b7-8477-edb4dbbe7845}, !- Handle
+  {1f24fbb8-47fa-430b-b1ad-20df8b7f5696}, !- Surface Name
+  {e8145493-cadb-4771-820d-d3e7d0df99fe}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:AirflowNetworkSimpleOpening,
+  {520aa2b5-dae8-41bb-804b-be3d9be55739}, !- Handle
+  Airflow Network Simple Opening 5,       !- Name
+  0.0014,                                 !- Air Mass Flow Coefficient When Opening is Closed {kg/s-m}
+  0.65,                                   !- Air Mass Flow Exponent When Opening is Closed {dimensionless}
+  0.0001,                                 !- Minimum Density Difference for Two-Way Flow {kg/m3}
+  0.45;                                   !- Discharge Coefficient {dimensionless}
+
+OS:AirflowNetworkSurface,
+  {992887f0-7149-4aea-acf8-cd74db44c21d}, !- Handle
+  {e3f3f493-4e89-4578-9520-32f913c3bf58}, !- Surface Name
+  {520aa2b5-dae8-41bb-804b-be3d9be55739}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:AirflowNetworkSimpleOpening,
+  {9ebdc9fb-f875-4799-bb10-342a991e93a7}, !- Handle
+  Airflow Network Simple Opening 6,       !- Name
+  0.00014,                                !- Air Mass Flow Coefficient When Opening is Closed {kg/s-m}
+  0.65,                                   !- Air Mass Flow Exponent When Opening is Closed {dimensionless}
+  0.0001,                                 !- Minimum Density Difference for Two-Way Flow {kg/m3}
+  0.45;                                   !- Discharge Coefficient {dimensionless}
+
+OS:AirflowNetworkSurface,
+  {efe1c8b4-ebaa-429c-bbad-8c14b03fb153}, !- Handle
+  {486147c8-d6e0-4bd1-b07a-ac88528700f2}, !- Surface Name
+  {9ebdc9fb-f875-4799-bb10-342a991e93a7}, !- Leakage Component Name
+  ,                                       !- External Node Name
+  ;                                       !- Window/Door Opening Factor, or Crack Factor {dimensionless}
+
+OS:Output:Variable,
+  {2733697a-db25-4f7b-a6ec-c4b1064ea824}, !- Handle
+  Output Variable 8,                      !- Name
+  Environment,                            !- Key Value
+  Site Outdoor Air Drybulb Temperature,   !- Variable Name
+  Timestep;                               !- Reporting Frequency
+
+OS:EnergyManagementSystem:Sensor,
+  {e61ac9af-e2ba-4d74-88f5-8afbfb8c5230}, !- Handle
+  Outdoor_Sensor,                         !- Name
+  Environment,                            !- Output Variable or Output Meter Index Key Name
+  {2733697a-db25-4f7b-a6ec-c4b1064ea824}; !- Output Variable or Output Meter Name
+
+OS:Output:Variable,
+  {4b0735ed-4e50-490c-8d15-bfd38d4d4dc8}, !- Handle
+  Output Variable 9,                      !- Name
+  classroom_9d637254,                     !- Key Value
+  Zone Air Temperature,                   !- Variable Name
+  Timestep;                               !- Reporting Frequency
+
+OS:EnergyManagementSystem:Sensor,
+  {928ef980-6789-481c-9613-c6d047c1d6e0}, !- Handle
+  classroomdSensor1,                      !- Name
+  classroom_9d637254,                     !- Output Variable or Output Meter Index Key Name
+  {4b0735ed-4e50-490c-8d15-bfd38d4d4dc8}; !- Output Variable or Output Meter Name
+
+OS:EnergyManagementSystem:Actuator,
+  {abc51261-0dee-4b46-844b-002df97d4b80}, !- Handle
+  DoorccdOpenFactor1,                     !- Name
+  {9c4e1ed8-2547-4a37-89b0-cb73fe3786c6}, !- Actuated Component Name
+  AirFlow Network Window/Door Opening,    !- Actuated Component Type
+  Venting Opening Factor;                 !- Actuated Component Control Type
+
+OS:EnergyManagementSystem:Actuator,
+  {09b81cc7-b35a-4364-adfe-fdd8e2ff9094}, !- Handle
+  AperturecceaOpenFactor2,                !- Name
+  {79470e48-54c9-4dad-8af9-1f51617ea6b4}, !- Actuated Component Name
+  AirFlow Network Window/Door Opening,    !- Actuated Component Type
+  Venting Opening Factor;                 !- Actuated Component Control Type
+
+OS:EnergyManagementSystem:Actuator,
+  {d92bc397-48d9-447e-90ee-98220bc70c61}, !- Handle
+  ApertureebOpenFactor3,                  !- Name
+  {b3c75b31-64a3-4fbc-a07e-a3248a7f87c5}, !- Actuated Component Name
+  AirFlow Network Window/Door Opening,    !- Actuated Component Type
+  Venting Opening Factor;                 !- Actuated Component Control Type
+
+OS:EnergyManagementSystem:Actuator,
+  {67b753c0-3279-4a9a-864c-5fd869f9d2c6}, !- Handle
+  ApertureaecOpenFactor4,                 !- Name
+  {1f24fbb8-47fa-430b-b1ad-20df8b7f5696}, !- Actuated Component Name
+  AirFlow Network Window/Door Opening,    !- Actuated Component Type
+  Venting Opening Factor;                 !- Actuated Component Control Type
+
+OS:EnergyManagementSystem:Actuator,
+  {ac45a2c8-a8a7-4e28-baf8-2a1a7a935060}, !- Handle
+  DooreccebaOpenFactor5,                  !- Name
+  {e3f3f493-4e89-4578-9520-32f913c3bf58}, !- Actuated Component Name
+  AirFlow Network Window/Door Opening,    !- Actuated Component Type
+  Venting Opening Factor;                 !- Actuated Component Control Type
+
+OS:EnergyManagementSystem:Actuator,
+  {ecdffaf1-0e88-43e8-a44c-47a1525f032d}, !- Handle
+  ApertureabdOpenFactor6,                 !- Name
+  {486147c8-d6e0-4bd1-b07a-ac88528700f2}, !- Actuated Component Name
+  AirFlow Network Window/Door Opening,    !- Actuated Component Type
+  Venting Opening Factor;                 !- Actuated Component Control Type
+
+OS:EnergyManagementSystem:Program,
+  {7510a183-f011-4239-b725-0ec1b8355850}, !- Handle
+  classroomdWindowOpening1,               !- Name
+  IF (Outdoor_Sensor < 100),              !- Program Line 1
+  SET DoorccdOpenFactor1 = 0.0,           !- Program Line 2
+  SET AperturecceaOpenFactor2 = 0.0,      !- Program Line 3
+  SET ApertureebOpenFactor3 = 0.0,        !- Program Line 4
+  SET ApertureaecOpenFactor4 = 0.0,       !- Program Line 5
+  SET DooreccebaOpenFactor5 = 0.0,        !- Program Line 6
+  SET ApertureabdOpenFactor6 = 0.0,       !- Program Line 7
+  ELSE,                                   !- Program Line 8
+  SET DoorccdOpenFactor1 = 0,             !- Program Line 9
+  SET AperturecceaOpenFactor2 = 0,        !- Program Line 10
+  SET ApertureebOpenFactor3 = 0,          !- Program Line 11
+  SET ApertureaecOpenFactor4 = 0,         !- Program Line 12
+  SET DooreccebaOpenFactor5 = 0,          !- Program Line 13
+  SET ApertureabdOpenFactor6 = 0,         !- Program Line 14
+  ENDIF;                                  !- Program Line 15
+
+OS:EnergyManagementSystem:ProgramCallingManager,
+  {dc079a44-c204-406f-ad78-43593b80c317}, !- Handle
+  Temperature_Controlled_Window_Opening,  !- Name
+  BeginTimestepBeforePredictor,           !- EnergyPlus Model Calling Point
+  {7510a183-f011-4239-b725-0ec1b8355850}; !- Program Name 1
+
+OS:ZoneHVAC:IdealLoadsAirSystem,
+  {0886639a-3f71-4fb0-be49-0126b383325e}, !- Handle
+  classroom_9d637254 Ideal Loads Air System, !- Name
+  ,                                       !- Availability Schedule Name
+  {c9db0d66-cdc6-462b-8efc-368d0d7930d5}, !- Zone Supply Air Node Name
+  {f6251285-0ba0-4648-b712-0591cd048b0e}, !- Zone Exhaust Air Node Name
+  50,                                     !- Maximum Heating Supply Air Temperature {C}
+  13,                                     !- Minimum Cooling Supply Air Temperature {C}
+  ,                                       !- Maximum Heating Supply Air Humidity Ratio {kg-H2O/kg-air}
+  ,                                       !- Minimum Cooling Supply Air Humidity Ratio {kg-H2O/kg-air}
+  LimitCapacity,                          !- Heating Limit
+  ,                                       !- Maximum Heating Air Flow Rate {m3/s}
+  autosize,                               !- Maximum Sensible Heating Capacity {W}
+  LimitFlowRateAndCapacity,               !- Cooling Limit
+  autosize,                               !- Maximum Cooling Air Flow Rate {m3/s}
+  autosize,                               !- Maximum Total Cooling Capacity {W}
+  ,                                       !- Heating Availability Schedule Name
+  ,                                       !- Cooling Availability Schedule Name
+  None,                                   !- Dehumidification Control Type
+  ,                                       !- Cooling Sensible Heat Ratio {dimensionless}
+  ,                                       !- Humidification Control Type
+  ,                                       !- Design Specification Outdoor Air Object Name
+  None,                                   !- Demand Controlled Ventilation Type
+  DifferentialDryBulb,                    !- Outdoor Air Economizer Type
+  ,                                       !- Heat Recovery Type
+  0,                                      !- Sensible Heat Recovery Effectiveness {dimensionless}
+  0;                                      !- Latent Heat Recovery Effectiveness {dimensionless}
+
+OS:Node,
+  {28641615-6f8f-4327-997a-56a42e47bb10}, !- Handle
+  Node 2,                                 !- Name
+  {9a305b05-fb82-4334-98d9-ad8e80872e0a}, !- Inlet Port
+  {c9db0d66-cdc6-462b-8efc-368d0d7930d5}; !- Outlet Port
+
+OS:Connection,
+  {9a305b05-fb82-4334-98d9-ad8e80872e0a}, !- Handle
+  {4e675c14-095f-4b33-9540-47333a0cd904}, !- Source Object
+  2,                                      !- Outlet Port
+  {28641615-6f8f-4327-997a-56a42e47bb10}, !- Target Object
+  2;                                      !- Inlet Port
+
+OS:Connection,
+  {c9db0d66-cdc6-462b-8efc-368d0d7930d5}, !- Handle
+  {28641615-6f8f-4327-997a-56a42e47bb10}, !- Source Object
+  3,                                      !- Outlet Port
+  {0886639a-3f71-4fb0-be49-0126b383325e}, !- Target Object
+  3;                                      !- Inlet Port
+
+OS:Node,
+  {2480322a-1c08-429a-b15e-9efafc387c58}, !- Handle
+  Node 3,                                 !- Name
+  {f6251285-0ba0-4648-b712-0591cd048b0e}, !- Inlet Port
+  {eac21301-52a1-471b-a8f7-6a2e11b041b9}; !- Outlet Port
+
+OS:Connection,
+  {eac21301-52a1-471b-a8f7-6a2e11b041b9}, !- Handle
+  {2480322a-1c08-429a-b15e-9efafc387c58}, !- Source Object
+  3,                                      !- Outlet Port
+  {0cd02d56-1c95-4c65-9e69-21a82ad6c296}, !- Target Object
+  2;                                      !- Inlet Port
+
+OS:Connection,
+  {f6251285-0ba0-4648-b712-0591cd048b0e}, !- Handle
+  {0886639a-3f71-4fb0-be49-0126b383325e}, !- Source Object
+  4,                                      !- Outlet Port
+  {2480322a-1c08-429a-b15e-9efafc387c58}, !- Target Object
+  2;                                      !- Inlet Port
+

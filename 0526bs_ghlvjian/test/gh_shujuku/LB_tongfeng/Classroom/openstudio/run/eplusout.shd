@@ -1,0 +1,94 @@
+Shadowing Combinations
+..Solar Distribution=FullExteriorWithReflectionsFromExteriorSurfaces
+..In the following, only the first 10 reference surfaces will be shown.
+..But all surfaces are used in the calculations.
+==================================
+Surface=CLASSROOM_9D637254..FACE1 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=CLASSROOM_9D637254..FACE2
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE2 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=CLASSROOM_9D637254..FACE1
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=DOOR_C0697CD3
+==================================
+Surface=DOOR_C0697CD3 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE3 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE4 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=3
+....Surface=APERTURE_70E2B756
+....Surface=APERTURE_999CCE4A
+....Surface=APERTURE_A57E415C
+==================================
+Surface=APERTURE_70E2B756 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=APERTURE_999CCE4A is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=APERTURE_A57E415C is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE5 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE6 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=CLASSROOM_9D637254..FACE7
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=DOOR_24ECCEBA
+==================================
+Surface=DOOR_24ECCEBA is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE7 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=1
+..Surface=CLASSROOM_9D637254..FACE6
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE8 is used as Receiving Surface in calculations and is convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=1
+....Surface=APERTURE_AB7D9017
+==================================
+Surface=APERTURE_AB7D9017 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE0 is not used as Receiving Surface in calculations.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
+==================================
+Surface=CLASSROOM_9D637254..FACE9 is used as Receiving Surface in calculations and is non-convex.
+Number of general casting surfaces=0
+Number of back surfaces=0
+Number of receiving sub surfaces=0
