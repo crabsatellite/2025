@@ -5,9 +5,9 @@
     "ja": "干渉場の研究"
   },
   "summary": {
-    "zh": "用相互干扰的场调制开洞与纹理，作为防空洞顶部采光井的几何来源。",
-    "en": "Perforations and textures driven by interfering fields, seeded into the shelter project's skylight design.",
-    "ja": "互いに干渉する場により開口とテクスチャを変調し、防空壕屋上採光井の幾何の起点とする。"
+    "zh": "用互相干扰的场调制开洞与纹理。这套几何后来进了防空洞顶部的采光井。",
+    "en": "Perforations and textures driven by interfering fields. The same geometry later went into the shelter project's skylight.",
+    "ja": "互いに干渉する場で開口とテクスチャを動かす。同じ幾何が後に防空壕屋上の採光井に入った。"
   },
   "tags": [
     "field",
