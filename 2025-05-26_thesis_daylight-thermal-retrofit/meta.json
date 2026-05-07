@@ -1,0 +1,20 @@
+{
+  "title": {
+    "zh": "光环境与热舒适——某教学楼绿色化改造",
+    "en": "Daylight & Thermal-Comfort Retrofit of an Education Building",
+    "ja": "採光と温熱快適性——ある教育施設の環境改修"
+  },
+  "summary": {
+    "zh": "用 Ladybug + EnergyPlus + Octopus 做的多目标优化：在采光（DA/UDI）、热舒适（PMV）与能耗之间求帕累托前沿，给出一组可施工的立面改造方案。",
+    "en": "Multi-objective optimisation with Ladybug + EnergyPlus + Octopus — a Pareto front across daylight (DA/UDI), thermal comfort (PMV) and energy use, yielding a set of constructable façade retrofits.",
+    "ja": "Ladybug + EnergyPlus + Octopus による多目的最適化。採光（DA / UDI）、温熱快適性（PMV）、エネルギー消費の間でパレートフロンティアを求め、施工可能な立面改修案の集合を提示する。"
+  },
+  "tags": [
+    "simulation",
+    "ladybug",
+    "energyplus",
+    "octopus",
+    "retrofit",
+    "education"
+  ]
+}
